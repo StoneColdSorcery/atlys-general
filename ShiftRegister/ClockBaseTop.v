@@ -409,7 +409,7 @@ module ClockBaseTop(
 			
 			end
 			//rxDecBuf <= rxUnldBuf;
-			
+			//added this comment
 			if(rxDecReady) begin 
 			// advance state and process byte accordingly
 				//rxDecBuf <= rxUnldBuf;
