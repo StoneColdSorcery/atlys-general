@@ -406,7 +406,7 @@ module ClockBaseTop(
 			if (rxToutCntr > rxTIMEOUT ) begin
 			// message timeout handler
 			// restart state machine and wait for new msg
-			
+			//test2
 			end
 			//rxDecBuf <= rxUnldBuf;
 			//added this comment
