@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-05-18T15:58:20</DateModified>
+  <DateModified>2015-05-18T16:34:32</DateModified>
   <ModuleName>CBIOWrapper</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/iseconfig/CBIOWrapper.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/Crazyfingers/Documents/Atlys Projects Git/ShiftRegister/iseconfig/CBIOWrapper.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/Crazyfingers/Documents/Atlys Projects Git/ShiftRegister\</ImplementationReportsDirectory>
   <DateInitialized>2015-05-07T14:38:17</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

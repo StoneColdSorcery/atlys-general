@@ -416,54 +416,23 @@ module ClockBaseTop(
 				rxToutCntr <= 0;
 				rxDecState <= rxDecNextState;						
 				
-						
-				case(rxDecState)
-					RXD_IDLE: begin       
-						if (rxDecNextState == RXD_HEAD) begin
-							msgHead <= rxDecBuf;
-							
-						end
-						
-					
-					end
-					
-					
-					RXD_HEAD: begin
-						if(storeHead) begin
-							msgHead <= rxDecBuf;
-						end
-						if(clearData) begin
-							nDataBytes <= 8'b0000_0000;
-							nBytesRcvd <= 8'b0000_0000;
-						end
-					
-					end
-					
-					
-					RXD_BCNT: begin
-						if(storeBcnt) begin
-							nDataBytes <= rxDecBuf;
-						end
-					
-					end
-					
-					RXD_BODY: begin
-						if(storeData) begin
-							nBytesRcvd <= nBytesRcvd + 1;
-							msgData [nBytesRcvd] <= rxDecBuf;
-						end
-					
-					end
-					
-					RXD_TAIL: begin
-					
-					end
-					
-					default: begin
-					//
-					end
-				
-				endcase
+									
+				if(storeHead) begin
+					msgHead <= rxDecBuf;
+				end
+				if(clearData) begin
+					nDataBytes <= 8'b0000_0000;
+					nBytesRcvd <= 8'b0000_0000;
+				end			
+				if(storeBcnt) begin
+					nDataBytes <= rxDecBuf;
+				end
+				if(storeData) begin
+					nBytesRcvd <= nBytesRcvd + 1;
+					msgData [nBytesRcvd] <= rxDecBuf;
+				end
+
+			
 			end	
 		end
 	
