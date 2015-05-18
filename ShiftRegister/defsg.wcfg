@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/test2sr_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="test2sr" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="17" />
+   <wvobject fp_name="/test2sr/Led" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Led[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Led[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/CLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/sw" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sw</obj_property>
+      <obj_property name="ObjectShortName">sw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/UartRx_Pin" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">UartRx_Pin</obj_property>
+      <obj_property name="ObjectShortName">UartRx_Pin</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/Uart/rx_in" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rx_in</obj_property>
+      <obj_property name="ObjectShortName">rx_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/Uart/rx_enable" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rx_enable</obj_property>
+      <obj_property name="ObjectShortName">rx_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/Uart/uld_rx_data" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">uld_rx_data</obj_property>
+      <obj_property name="ObjectShortName">uld_rx_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/Uart/rxclk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rxclk</obj_property>
+      <obj_property name="ObjectShortName">rxclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/Uart/rx_reg" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rx_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_reg[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/Uart/rx_cnt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rx_cnt[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_cnt[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/Uart/rx_sample_cnt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rx_sample_cnt[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_sample_cnt[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/Uart/rx_frame_err" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rx_frame_err</obj_property>
+      <obj_property name="ObjectShortName">rx_frame_err</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/Uart/rx_over_run" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rx_over_run</obj_property>
+      <obj_property name="ObjectShortName">rx_over_run</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/Uart/rx_d1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rx_d1</obj_property>
+      <obj_property name="ObjectShortName">rx_d1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/Uart/rx_d2" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rx_d2</obj_property>
+      <obj_property name="ObjectShortName">rx_d2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/Uart/rx_busy" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rx_busy</obj_property>
+      <obj_property name="ObjectShortName">rx_busy</obj_property>
+   </wvobject>
+</wave_config>

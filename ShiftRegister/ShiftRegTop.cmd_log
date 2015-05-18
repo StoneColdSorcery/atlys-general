@@ -1,0 +1,7 @@
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/ShiftRegTop.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/ShiftRegTop.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg324-2 "ShiftRegTop.ngc" ShiftRegTop.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ShiftRegTop_map.ncd ShiftRegTop.ngd ShiftRegTop.pcf 
+par -w -intstyle ise -ol high -mt off ShiftRegTop_map.ncd ShiftRegTop.ncd ShiftRegTop.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml ShiftRegTop.twx ShiftRegTop.ncd -o ShiftRegTop.twr ShiftRegTop.pcf 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim ShiftRegTop.ngc ShiftRegTop_synthesis.v 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/ShiftRegTop.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/ShiftRegTop.syr" 

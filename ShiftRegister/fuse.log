@@ -1,0 +1,25 @@
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/test2sr_isim_beh.exe" -prj "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/test2sr_beh.prj" "work.test2sr" "work.glbl" 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/UART.v" into library work
+Analyzing Verilog file "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/ShiftRegTop.v" into library work
+Analyzing Verilog file "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/ClockDivider.v" into library work
+Analyzing Verilog file "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/ClockBaseTop.v" into library work
+Analyzing Verilog file "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/test2sr.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module uart
+Compiling module ShiftRegTop
+Compiling module ClockDivider(divval=32'b01100100...
+Compiling module ClockDivider(divval=52)
+Compiling module ClockBaseTop
+Compiling module test2sr
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Compiled 7 Verilog Units
+Built simulation executable C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/test2sr_isim_beh.exe
+Fuse Memory Usage: 29020 KB
+Fuse CPU Usage: 327 ms

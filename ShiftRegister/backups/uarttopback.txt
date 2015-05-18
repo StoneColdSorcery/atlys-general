@@ -1,0 +1,240 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    18:43:47 02/17/2015 
+// Design Name: 
+// Module Name:    ClockBaseTop 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module ClockBaseTop(
+	input CLK,
+	input sw,
+	input reset,
+	input ct_UartRx,
+	//input        ct_ld_tx_data,
+	//input  [7:0] ct_tx_data,
+	//input        ct_tx_enable,
+	//input        ct_rx_enable,
+	//input        ct_rx_in,
+	output [7:0] ct_Led
+);
+	
+	
+	wire SRCK, RCK, EN, CLR;
+	wire [7:0] ct_sreg;
+	wire ct_rx_in;
+	wire [7:0] ct_rx_data;
+	wire [7:0] ct_tx_data;
+   //wire ct_txclk, ct_ld_tx_data, ct_tx_enable, ct_tx_out, ct_tx_empty, ct_rxclk, ct_uld_rx_data, ct_rx_enable, ct_rx_in, ct_rx_empty;
+	reg ct_uld_rx_data;
+	
+	///===========================================================================
+	// RX unloader decs
+	///===========================================================================
+	parameter LDWAIT = 2'b01, LDRESET = 2'b10, LDSKIP = 2'b11;
+	
+	
+	reg [1:0] rxUnldState;
+	reg [1:0] rxUnldNextState;
+	reg [7:0] rxUnldBuf; 
+	///===========================================================================
+	
+	
+	
+
+	
+	
+	
+	assign ct_tx_data = 8'b0000_0000;
+	assign ct_tx_enable = 0;
+	
+	assign ct_rx_enable = 1;
+//	assign ct_uld_rx_data = 1;	
+	assign ct_rx_in = ct_UartRx;
+	
+	assign ct_Led = rxUnldBuf;
+	
+	/*
+	assign ct_Led[0] = ct_rx_enable;
+	assign ct_Led[1] = ct_rx_in;
+	assign ct_Led[2] = ct_rx_empty;
+	assign ct_Led[3] = ct_rx_in;
+	assign ct_Led[4] = ct_rxclk;
+	assign ct_Led[7:5] = 3'b000;
+	*/
+	
+
+	uart Uart (
+		.reset(reset)      ,
+		.txclk(ct_txclk)          ,
+		.ld_tx_data(ct_ld_tx_data),      
+		.tx_data(ct_tx_data)        ,
+		.tx_enable(ct_tx_enable)      ,
+		.tx_out(ct_tx_out)		    ,
+		.tx_empty(ct_tx_empty)       ,
+		.rxclk(ct_rxclk)          ,
+		.uld_rx_data(ct_uld_rx_data)    ,
+		.rx_data(ct_rx_data) ,
+		.rx_enable(ct_rx_enable)      ,
+		.rx_in(ct_rx_in)          ,
+		.rx_empty(ct_rx_empty)
+		);
+	
+	ShiftRegTop ShiftReg (
+		.SIN(sw), 
+		.SRCK(SRCK), 
+		.RCK(RCK), 
+		.EN(EN), 
+		.CLR(reset), 
+		.Sreg(ct_sreg)
+	);
+	
+	defparam SRclkdiv.divval = 32'd50_000_000;
+	defparam RXclkdiv.divval = 52;
+	
+	ClockDivider SRclkdiv (
+	.clk_in(CLK),
+	.reset(reset),
+	.clk_out(SRCK)
+	);
+
+	ClockDivider RXclkdiv (
+	.clk_in(CLK),
+	.reset(reset),
+	.clk_out(ct_rxclk)
+	);
+	
+	
+	///===========================================================================
+	//  RX UNLOAD STATE MACHINE
+	///===========================================================================
+	
+	always @ (*) begin
+		
+		case (rxUnldState)
+			
+			LDWAIT: begin
+				if (!ct_rx_empty) begin //there is rx data to uld
+					ct_uld_rx_data = 1;
+					rxUnldNextState = LDSKIP;		
+				end
+				else begin
+					rxUnldNextState = LDWAIT;	
+					ct_uld_rx_data = 0;
+				end
+			end
+			LDSKIP: begin
+				rxUnldNextState = LDRESET;
+				ct_uld_rx_data = 0;
+			end
+			LDRESET: 
+				rxUnldNextState = LDWAIT;
+			
+			default: begin
+				rxUnldNextState = LDWAIT;
+				ct_uld_rx_data = 0;
+			end
+		endcase			
+			
+	end
+	
+	always@(negedge reset or posedge ct_rxclk) begin
+		if (reset == 0) begin
+			//ct reset ops
+			rxUnldState <= LDWAIT;
+			rxUnldBuf <= 8'b0000_0000;
+		end
+		else begin
+			
+			//=======================================
+			// RX UNLOADER SEQ LOGIC
+			//=======================================
+			
+			rxUnldState <= rxUnldNextState;
+			
+			case (rxUnldState)
+				
+				//LDWAIT: 
+					//
+				//LDSKIP:
+					//
+				LDRESET: 
+					rxUnldBuf <= ct_rx_data;
+				//default:
+				
+			endcase
+			//=======================================
+		
+		end	
+	
+	end
+	
+	///===========================================================================
+	
+	
+	
+	///===========================================================================
+	///---------------------------------------------------------------------------
+	//  RX DECODE STATE MACHINE
+	///---------------------------------------------------------------------------
+	///===========================================================================
+	
+	
+		
+
+	// UART RX MSG DECODER DECS----------------
+	
+	parameter RXD_IDLE = 6'b100000,  RXD_HEAD = 6'b010000,  RXD_BODY = 6'b001000, RXD_TAIL = 6'b000100, RXD_HEAD = 6'b000010;
+	
+	reg [5:0] rxDecState;
+	reg [5:0] rxDecNextState;
+	
+	reg [7:0] msgHead;
+	reg [7:0] msgData [3:0];
+	reg [7:0] msgTail ;
+	
+	reg [31:0] rxToutCntr;
+	
+	always @ (posedge ct_rxclk or negedge reset) begin
+		
+		if(!reset) begin
+			rxDecState <= RDX_IDLE;
+			msgHead <= 8'b0000_0000;
+			msgData <= 32'b0000_0000_0000_0000_0000_0000_0000_0000;
+			msgTail <= 8'b0000_0000;
+
+			rxToutCntr <=  32'b0000_0000_0000_0000_0000_0000_0000_0000;
+		end
+		else begin
+			rxDecState <= rxDecNextState;						
+		
+		
+		end
+
+		
+		
+		end
+	
+	
+	end
+	
+	
+	
+	
+	///===========================================================================
+	
+endmodule
+
+

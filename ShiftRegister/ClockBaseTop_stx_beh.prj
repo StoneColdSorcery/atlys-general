@@ -1,0 +1,5 @@
+verilog isim_temp "UART_9.v"
+verilog isim_temp "ShiftRegTop.v"
+verilog isim_temp "ClockDivider.v"
+verilog isim_temp "ClockBaseTop.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
