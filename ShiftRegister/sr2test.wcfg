@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/test2sr_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="test2sr" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="28" />
+   <wvobject fp_name="/test2sr/Led" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Led[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Led[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/CLK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/sw" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sw</obj_property>
+      <obj_property name="ObjectShortName">sw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/UartRx_Pin" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">UartRx_Pin</obj_property>
+      <obj_property name="ObjectShortName">UartRx_Pin</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/sendOut" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sendOut</obj_property>
+      <obj_property name="ObjectShortName">sendOut</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/us_enable" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">us_enable</obj_property>
+      <obj_property name="ObjectShortName">us_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/storeHead" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">storeHead</obj_property>
+      <obj_property name="ObjectShortName">storeHead</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/storeData" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">storeData</obj_property>
+      <obj_property name="ObjectShortName">storeData</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/storeTail" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">storeTail</obj_property>
+      <obj_property name="ObjectShortName">storeTail</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/storeBcnt" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">storeBcnt</obj_property>
+      <obj_property name="ObjectShortName">storeBcnt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/rxDecBuf" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rxDecBuf[8:0]</obj_property>
+      <obj_property name="ObjectShortName">rxDecBuf[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/rxDecData" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rxDecData[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rxDecData[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/rxDecCtrl" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rxDecCtrl</obj_property>
+      <obj_property name="ObjectShortName">rxDecCtrl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/nBytesRcvd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">nBytesRcvd[7:0]</obj_property>
+      <obj_property name="ObjectShortName">nBytesRcvd[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/nDataBytes" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">nDataBytes[7:0]</obj_property>
+      <obj_property name="ObjectShortName">nDataBytes[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/rxToutCntr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rxToutCntr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rxToutCntr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/msgTail" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">msgTail[7:0]</obj_property>
+      <obj_property name="ObjectShortName">msgTail[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/msgData" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">msgData[9:0,7:0]</obj_property>
+      <obj_property name="ObjectShortName">msgData[9:0,7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/msgHead" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">msgHead[7:0]</obj_property>
+      <obj_property name="ObjectShortName">msgHead[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/rxDecNextState" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rxDecNextState[5:0]</obj_property>
+      <obj_property name="ObjectShortName">rxDecNextState[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/rxDecState" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rxDecState[5:0]</obj_property>
+      <obj_property name="ObjectShortName">rxDecState[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/rxByteReady" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rxByteReady</obj_property>
+      <obj_property name="ObjectShortName">rxByteReady</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/rxDecReady" type="logic" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">rxDecReady</obj_property>
+      <obj_property name="ObjectShortName">rxDecReady</obj_property>
+      <obj_property name="label">rxDecReady</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/ledOutBuf" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ledOutBuf[7:0]</obj_property>
+      <obj_property name="ObjectShortName">ledOutBuf[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/ledMsgInd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ledMsgInd[3:0]</obj_property>
+      <obj_property name="ObjectShortName">ledMsgInd[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/ctrlStart" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ctrlStart</obj_property>
+      <obj_property name="ObjectShortName">ctrlStart</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test2sr/uut/ctrlStop" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ctrlStop</obj_property>
+      <obj_property name="ObjectShortName">ctrlStop</obj_property>
+   </wvobject>
+</wave_config>
