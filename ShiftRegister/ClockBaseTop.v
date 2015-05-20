@@ -217,12 +217,13 @@ module ClockBaseTop(
 
 	// UART RX MSG DECODER DECS----------------
 	
-	parameter RXD_IDLE = 6'b100000,  RXD_HEAD = 6'b010000,  RXD_BCNT = 6'b001000, RXD_BODY = 6'b000100, RXD_TAIL = 6'b000010, RXD_RCVD = 6'b000001;
+	parameter RXD_IDLE = 6'b100000,  RXD_HEAD = 6'b010000,  RXD_BCNT = 6'b001000, RXD_BODY = 6'b000100, RXD_TAIL = 6'b000010, RXD_ESCD = 6'b000001;
 	parameter rxTIMEOUT = 100;
 	parameter DATAMAXBYTES = 10;
-	parameter SP_START = 8'b01111110, SP_END = 8'b01111110, SP_ESC = 8'b01111110;
+	parameter SP_SYNC = 8'b01111110, SP_ESC = 8'b00000010, SP_END = 8'b00000011;
 	
 	reg [5:0] rxDecState;
+	reg [5:0] rxDecStatePrev; // temp reg to restore prev state after esc bytes
 	reg [5:0] rxDecNextState;
 	
 	reg [7:0] msgHead;
@@ -255,7 +256,7 @@ module ClockBaseTop(
 			end
 			rxDecState <= RXD_HEAD;
 			msgHead <= 8'b0000_0000;
-			
+			rxDecStateSave <= RXD_IDLE;
 			//rxDecBuf <= 8'b0000_0000; moved to DECtransfer stage
 			msgTail <= 8'b0000_0000;
 			nDataBytes <= 8'b0000_0000;
@@ -288,81 +289,118 @@ module ClockBaseTop(
 	// DECODER STATE COMB LOGIC
 	always @ (*) begin
 		
-		case (rxDecState)
-	
-			RXD_IDLE: begin
-				
-				clearData = 0;
+		
+		
+		
+		if (rxDecState == RXD_ESCD) begin
+		// Logic for the escape state must preempt logic for other ctrl bytes
+				rxDecNextState = RXD_IDLE;
+				rxStateReturn = 1; // jump back to prev state 
 				storeData = 0;
 				storeTail = 0;
 				storeBcnt = 0;
 				storeHead = 0;
-				rxDecNextState = RXD_HEAD;
-			
-			end
-			
-			RXD_BCNT: begin
-				storeData = 0;
-				storeTail = 0;
-				storeHead = 0;
-				storeBcnt = 1;
 				clearData = 0;
-				rxDecNextState = RXD_BODY;
-				
-			end
+		end if (rxDecBuf == SP_ESC) begin
 			
-			RXD_HEAD: begin
-				storeData = 0;
-				storeTail = 0;
-				storeBcnt = 0;
-				if(rxDecBuf == 8'b01111110) begin
-					rxDecNextState = RXD_BCNT;
-					storeHead = 1;
-					clearData = 1;
-				end else begin 
-					rxDecNextState = RXD_HEAD;
+			
+			rxDecNextState = RXD_ESCD;
+			rxEscFlag = 1;
+			clearData = 0;
+			storeData = 0;
+			storeTail = 0;
+			storeBcnt = 0;
+			storeHead = 0;
+
+		end else if (rxDecBuf == SP_SYNC) begin		
+			rxDecNextState = RXD_BCNT;
+			storeHead = 1;
+			clearData = 1;
+			
+			storeData = 0;
+			rxEscFlag = 0;
+			storeTail = 0;
+			storeBcnt = 0;
+		end else begin
+			rxEscFlag = 0; //always clear esc flag
+			case (rxDecState)
+		
+				RXD_IDLE: begin
+					
+					clearData = 0;
+					storeData = 0;
+					storeTail = 0;
+					storeBcnt = 0;
+					storeHead = 0;
+					rxDecNextState = RXD_IDLE;
+				
+				end
+				
+				RXD_BCNT: begin
+					storeData = 0;
+					storeTail = 0;
+					storeHead = 0;
+					storeBcnt = 1;
+					clearData = 0;
+					rxDecNextState = RXD_BODY;
+					
+				end
+				
+				RXD_HEAD: begin
+					storeData = 0;
+					storeTail = 0;
+					storeBcnt = 0;
 					storeHead = 0;
 					clearData = 0;
+					rxDecNextState = RXD_IDLE;
+					/*if(rxDecBuf == 8'b01111110) begin
+						rxDecNextState = RXD_BCNT;
+						storeHead = 1;
+						clearData = 1;
+					end else begin 
+						rxDecNextState = RXD_HEAD;
+						storeHead = 0;
+						clearData = 0;
+					end
+					*/
 				end
-
-			end
-			
-			RXD_BODY: begin
-				clearData = 0;
-				storeTail = 0;
-				storeBcnt = 0;
-				storeHead = 0;
-				if ((nBytesRcvd < (nDataBytes - 1)) && (nBytesRcvd < DATAMAXBYTES)) begin
-				// If still have packets to receive	
-					rxDecNextState = RXD_BODY;
-					storeData = 1;
-				end else begin
-					rxDecNextState = RXD_HEAD;
-					storeData = 1;
+				
+				RXD_BODY: begin
+					clearData = 0;
+					storeTail = 0;
+					storeBcnt = 0;
+					storeHead = 0;
+					if ((nBytesRcvd < (nDataBytes - 1)) && (nBytesRcvd < DATAMAXBYTES)) begin
+					// If still have packets to receive	
+						rxDecNextState = RXD_BODY;
+						storeData = 1;
+					end else begin
+						rxDecNextState = RXD_HEAD;
+						storeData = 1;
+					end
+				
 				end
-			
-			end
-			
-			RXD_TAIL: begin
-				storeBcnt = 0;
-				storeHead = 0;
-				storeData = 0;
-				storeTail = 0;
-				clearData = 0;
-				rxDecNextState = RXD_IDLE;
-			end
-			
-			default: begin
-				storeBcnt = 0;
-				storeHead = 0;
-				storeData = 0;
-				storeTail = 0;
-				clearData = 0;
-				rxDecNextState = RXD_IDLE;
-			end
-			
-		endcase
-		
+				
+				RXD_ESCD: begin
+					storeBcnt = 0;
+					storeHead = 0;
+					storeData = 0;
+					storeTail = 0;
+					clearData = 0;
+					rxDecNextState = RXD_IDLE;
+				end
+				
+				default: begin
+					storeBcnt = 0;
+					storeHead = 0;
+					storeData = 0;
+					storeTail = 0;
+					clearData = 0;
+					rxDecNextState = RXD_IDLE;
+				end
+				
+			endcase
+		end
 	end
 	
 	
@@ -413,9 +451,17 @@ module ClockBaseTop(
 			if(rxDecReady) begin 
 			// advance state and process byte accordingly
 				//rxDecBuf <= rxUnldBuf;
-				rxToutCntr <= 0;
-				rxDecState <= rxDecNextState;						
 				
+				
+				rxToutCntr <= 0;
+				rxDecStatePrev <= rxDecState; //store prev state to jump back in case of ESC
+				if(rxEscFlag) begin
+					rxDecState <= RXD_ESCD;					
+				end else if (rxStateReturn) begin
+					rxDecState <= rxDecStatePrev;						
+				end else begin
+					rxDecState <= rxDecNextState;	
+				end
 									
 				if(storeHead) begin
 					msgHead <= rxDecBuf;
