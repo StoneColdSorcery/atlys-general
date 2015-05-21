@@ -1,5 +1,0 @@
-verilog work "UART_9.v"
-verilog work "ShiftRegTop.v"
-verilog work "ClockDivider.v"
-verilog work "ClockBaseTop.v"
-verilog work "CBIOWrapper.v"

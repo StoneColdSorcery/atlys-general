@@ -1,6 +1,0 @@
-verilog work "UART.v"
-verilog work "ShiftRegTop.v"
-verilog work "ClockDivider.v"
-verilog work "ClockBaseTop.v"
-verilog work "test2sr.v"
-verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

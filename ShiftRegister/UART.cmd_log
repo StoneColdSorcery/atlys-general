@@ -1,1 +1,0 @@
-vhdtdtfi -lang verilog -prj ShiftRegister -o "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/UART.tfi" -lib work "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister//UART.v" -module UART -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

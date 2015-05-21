@@ -1,4 +1,0 @@
-verilog work "UART.v"
-verilog work "ShiftRegTop.v"
-verilog work "ClockDivider.v"
-verilog work "ClockBaseTop.v"
