@@ -1,0 +1,74 @@
+vhdtdtfi -lang verilog -prj ShiftRegister -o "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.tfi" -lib work "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister//CBIOWrapper.v" -module CBIOWrapper -template C:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc iopoins.ucf -p xc6slx45-csg324-2 "CBIOWrapper.ngc" CBIOWrapper.ngd  
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc iopoins.ucf -p xc6slx45-csg324-2 "CBIOWrapper.ngc" CBIOWrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CBIOWrapper_map.ncd CBIOWrapper.ngd CBIOWrapper.pcf 
+par -w -intstyle ise -ol high -mt off CBIOWrapper_map.ncd CBIOWrapper.ncd CBIOWrapper.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CBIOWrapper.twx CBIOWrapper.ncd -o CBIOWrapper.twr CBIOWrapper.pcf -ucf iopoins.ucf 
+bitgen -intstyle ise -f CBIOWrapper.ut CBIOWrapper.ncd 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc iopoins.ucf -p xc6slx45-csg324-2 "CBIOWrapper.ngc" CBIOWrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CBIOWrapper_map.ncd CBIOWrapper.ngd CBIOWrapper.pcf 
+par -w -intstyle ise -ol high -mt off CBIOWrapper_map.ncd CBIOWrapper.ncd CBIOWrapper.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CBIOWrapper.twx CBIOWrapper.ncd -o CBIOWrapper.twr CBIOWrapper.pcf -ucf iopoins.ucf 
+bitgen -intstyle ise -f CBIOWrapper.ut CBIOWrapper.ncd 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc iopoins.ucf -p xc6slx45-csg324-2 "CBIOWrapper.ngc" CBIOWrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CBIOWrapper_map.ncd CBIOWrapper.ngd CBIOWrapper.pcf 
+par -w -intstyle ise -ol high -mt off CBIOWrapper_map.ncd CBIOWrapper.ncd CBIOWrapper.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CBIOWrapper.twx CBIOWrapper.ncd -o CBIOWrapper.twr CBIOWrapper.pcf -ucf iopoins.ucf 
+bitgen -intstyle ise -f CBIOWrapper.ut CBIOWrapper.ncd 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc iopoins.ucf -p xc6slx45-csg324-2 "CBIOWrapper.ngc" CBIOWrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CBIOWrapper_map.ncd CBIOWrapper.ngd CBIOWrapper.pcf 
+par -w -intstyle ise -ol high -mt off CBIOWrapper_map.ncd CBIOWrapper.ncd CBIOWrapper.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CBIOWrapper.twx CBIOWrapper.ncd -o CBIOWrapper.twr CBIOWrapper.pcf -ucf iopoins.ucf 
+bitgen -intstyle ise -f CBIOWrapper.ut CBIOWrapper.ncd 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc iopoins.ucf -p xc6slx45-csg324-2 "CBIOWrapper.ngc" CBIOWrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CBIOWrapper_map.ncd CBIOWrapper.ngd CBIOWrapper.pcf 
+par -w -intstyle ise -ol high -mt off CBIOWrapper_map.ncd CBIOWrapper.ncd CBIOWrapper.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CBIOWrapper.twx CBIOWrapper.ncd -o CBIOWrapper.twr CBIOWrapper.pcf -ucf iopoins.ucf 
+bitgen -intstyle ise -f CBIOWrapper.ut CBIOWrapper.ncd 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc iopoins.ucf -p xc6slx45-csg324-2 "CBIOWrapper.ngc" CBIOWrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CBIOWrapper_map.ncd CBIOWrapper.ngd CBIOWrapper.pcf 
+par -w -intstyle ise -ol high -mt off CBIOWrapper_map.ncd CBIOWrapper.ncd CBIOWrapper.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CBIOWrapper.twx CBIOWrapper.ncd -o CBIOWrapper.twr CBIOWrapper.pcf -ucf iopoins.ucf 
+bitgen -intstyle ise -f CBIOWrapper.ut CBIOWrapper.ncd 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc iopoins.ucf -p xc6slx45-csg324-2 "CBIOWrapper.ngc" CBIOWrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CBIOWrapper_map.ncd CBIOWrapper.ngd CBIOWrapper.pcf 
+par -w -intstyle ise -ol high -mt off CBIOWrapper_map.ncd CBIOWrapper.ncd CBIOWrapper.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CBIOWrapper.twx CBIOWrapper.ncd -o CBIOWrapper.twr CBIOWrapper.pcf -ucf iopoins.ucf 
+bitgen -intstyle ise -f CBIOWrapper.ut CBIOWrapper.ncd 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys Projects/ShiftRegister/CBIOWrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc iopoins.ucf -p xc6slx45-csg324-2 "CBIOWrapper.ngc" CBIOWrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CBIOWrapper_map.ncd CBIOWrapper.ngd CBIOWrapper.pcf 
+par -w -intstyle ise -ol high -mt off CBIOWrapper_map.ncd CBIOWrapper.ncd CBIOWrapper.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CBIOWrapper.twx CBIOWrapper.ncd -o CBIOWrapper.twr CBIOWrapper.pcf -ucf iopoins.ucf 
+bitgen -intstyle ise -f CBIOWrapper.ut CBIOWrapper.ncd 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/CBIOWrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc iopoins.ucf -p xc6slx45-csg324-2 CBIOWrapper.ngc CBIOWrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CBIOWrapper_map.ncd CBIOWrapper.ngd CBIOWrapper.pcf 
+par -w -intstyle ise -ol high -mt off CBIOWrapper_map.ncd CBIOWrapper.ncd CBIOWrapper.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CBIOWrapper.twx CBIOWrapper.ncd -o CBIOWrapper.twr CBIOWrapper.pcf -ucf iopoins.ucf 
+bitgen -intstyle ise -f CBIOWrapper.ut CBIOWrapper.ncd 
+xst -intstyle ise -ifn "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/CBIOWrapper.xst" -ofn "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/CBIOWrapper.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc iopoins.ucf -p xc6slx45-csg324-2 CBIOWrapper.ngc CBIOWrapper.ngd  
+map -intstyle ise -p xc6slx45-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CBIOWrapper_map.ncd CBIOWrapper.ngd CBIOWrapper.pcf 
+par -w -intstyle ise -ol high -mt off CBIOWrapper_map.ncd CBIOWrapper.ncd CBIOWrapper.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CBIOWrapper.twx CBIOWrapper.ncd -o CBIOWrapper.twr CBIOWrapper.pcf -ucf iopoins.ucf 
+bitgen -intstyle ise -f CBIOWrapper.ut CBIOWrapper.ncd 

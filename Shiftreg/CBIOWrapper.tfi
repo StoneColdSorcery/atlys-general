@@ -1,0 +1,12 @@
+
+
+
+// Instantiate the module
+CBIOWrapper instance_name (
+    .VHDCIIO1(VHDCIIO1), 
+    .VHDCIIO2(VHDCIIO2), 
+    .Led(Led), 
+    .reset(reset)
+    );
+
+

@@ -43,7 +43,7 @@ module ClockBaseTop(
 	///===========================================================================
 	// RX unloader decs
 	///===========================================================================
-	parameter LDWAIT = 2'b01, LDRESET = 2'b10, LDSKIP = 2'b11, LDRESET2 = 2'b00;
+	parameter LDWAIT = 2'b01, LDRESET = 2'b10, LDSKIP = 2'b11;
 	
 	
 	reg [1:0] rxUnldState;
@@ -66,7 +66,7 @@ module ClockBaseTop(
 //	assign ct_uld_rx_data = 1;	
 	assign ct_rx_in = ct_UartRx;
 	
-	assign ct_Led = ledOutBuf;
+	assign ct_Led = rxUnldBuf;
 	
 	/*
 	assign ct_Led[0] = ct_rx_enable;
@@ -103,15 +103,7 @@ module ClockBaseTop(
 		.Sreg(ct_sreg)
 	);
 	
-	
-	`ifdef XILINX_ISIM
-		defparam SRclkdiv.divval = 32'd100;
-	`else
-		defparam SRclkdiv.divval = 32'd50_000_000;
-	`    endif
-	
-	
-	
+	defparam SRclkdiv.divval = 32'd50_000_000;
 	defparam RXclkdiv.divval = 52;
 	
 	ClockDivider SRclkdiv (
@@ -125,9 +117,6 @@ module ClockBaseTop(
 	.reset(reset),
 	.clk_out(ct_rxclk)
 	);
-	
-	
-
 	
 	
 	///===========================================================================
@@ -152,14 +141,11 @@ module ClockBaseTop(
 			LDSKIP: begin
 				rxUnldNextState = LDRESET;
 				ct_uld_rx_data = 0;
-				rxByteReady = 0;
 			end 
 			LDRESET: begin 
 				rxUnldNextState = LDWAIT;
 				rxByteReady = 1;
-				ct_uld_rx_data = 0;
 			end
-
 			default: begin
 				rxUnldNextState = LDWAIT;
 				ct_uld_rx_data = 0;
@@ -211,22 +197,17 @@ module ClockBaseTop(
 	///===========================================================================
 	
 	
-	
-	
 		
 
 	// UART RX MSG DECODER DECS----------------
 	
-	parameter RXD_IDLE = 6'b100000,  RXD_HEAD = 6'b010000,  RXD_BCNT = 6'b001000, RXD_BODY = 6'b000100, RXD_TAIL = 6'b000010, RXD_NULL = 6'b000001;
+	parameter RXD_IDLE = 6'b100000,  RXD_HEAD = 6'b010000,  RXD_BODY = 6'b001000, RXD_TAIL = 6'b000100, RXD_BCNT = 6'b000010;
 	parameter rxTIMEOUT = 100;
 	parameter DATAMAXBYTES = 10;
-	parameter SP_SYNC = 8'b01111110, SP_ESC = 8'b00000010, SP_END = 8'b00000011;
+	
 	
 	reg [5:0] rxDecState;
-	reg [5:0] rxDecStatePrev; // temp reg to restore prev state after esc bytes
 	reg [5:0] rxDecNextState;
-	
-	reg rxStateEscReg;
 	
 	reg [7:0] msgHead;
 	reg [7:0] msgData [DATAMAXBYTES-1:0];
@@ -238,242 +219,158 @@ module ClockBaseTop(
 	reg [7:0] nBytesRcvd;
 	reg [7:0] rxDecBuf;
 	
-	reg rxEscFlag; 
-	reg rxStateReturn;
 	
 	reg storeHead;
 	reg storeData;
 	reg storeTail;
 	reg storeBcnt;
 	
-	reg clearData;
 	integer i;
 	
-		//task defs
+	always @ (*) begin
+		
+		case (rxDecState)
 	
-	
-	//reset sequence for rxdecode SM
-	task RxDecodeReset;
-		begin
-			for (i = 0; i < DATAMAXBYTES; i = i + 1) begin
-					 msgData[i] <= 8'b00000000;	
+			RXD_IDLE: begin
+				
+				
+				storeData = 0;
+				storeTail = 0;
+				storeBcnt = 0;
+				storeHead = 0;
+				rxDecNextState = RXD_HEAD;
+			
 			end
-			rxDecState <= RXD_HEAD;
+			
+			RXD_BCNT: begin
+				storeData = 0;
+				storeTail = 0;
+				storeBcnt = 0;
+				storeBcnt = 1;
+				rxDecNextState = RXD_BODY;
+				
+			end
+			
+			RXD_HEAD: begin
+				storeData = 0;
+				storeTail = 0;
+				storeBcnt = 0;
+				if(rxDecBuf == 8'b01111110) begin
+					rxDecNextState = RXD_BCNT;
+					storeHead = 1;
+				end else begin
+					rxDecNextState = RXD_HEAD;
+					storeHead = 0;
+				end
+
+			end
+			
+			RXD_BODY: begin
+				storeTail = 0;
+				storeBcnt = 0;
+				if ((nBytesRcvd < nDataBytes) && (nBytesRcvd < DATAMAXBYTES)) begin
+				// If still have packets to receive	
+					rxDecNextState = RXD_BODY;
+					storeData = 1;
+				end else begin
+					rxDecNextState = RXD_IDLE;
+					storeData = 0;
+				end
+			
+			end
+			
+			RXD_TAIL: begin
+			
+			end
+			
+			default: begin
+				storeBcnt = 0;
+				storeHead = 0;
+				storeData = 0;
+				storeTail = 0;
+			end
+			
+		endcase
+		
+	end
+	
+	
+	assign rxDecBuf = rxUnldBuf;
+	
+	always @ (posedge ct_rxclk or negedge reset) begin
+		
+		if(!reset) begin
+		
+	
+			for (i = 0; i < DATAMAXBYTES; i = i + 1)
+				begin
+					 msgData[i] <= 8'b00000000;
+			
+			end
+			rxDecState <= RXD_IDLE;
 			msgHead <= 8'b0000_0000;
-			rxStateEscReg <= 0;
-			//rxDecBuf <= 8'b0000_0000; moved to DECtransfer stage
+			
+			rxDecBuf <= 8'b0000_0000;
 			msgTail <= 8'b0000_0000;
 			nDataBytes <= 8'b0000_0000;
 			nBytesRcvd <= 8'b0000_0000;
 			rxToutCntr <=  32'b0000_0000_0000_0000_0000_0000_0000_0000;
 		end
-	endtask
-	
-	task RxDataClear;
-		begin
-			for (i = 0; i < DATAMAXBYTES; i = i + 1) begin
-					 msgData[i] <= 8'b00000000;	
-			end
-		end
-	endtask
-	
-	
-	function isSpecial;
-	input inByte;
-	begin
-		if (inByte == SP_ESC ) 
-			isSpecial = 1;
-		else 
-			isSpecial = 0;
-	
-	end
-	endfunction
-	
-	//======================================
-	// DECODER STATE COMB LOGIC
-	always @ (*) begin
-		
-		
-		
-
-
-		if ((rxDecBuf == SP_ESC) && !rxStateEscReg) begin
-						
-			rxDecNextState = RXD_NULL;
-			rxEscFlag = 1; // esc next 
-			storeData = 0;
-			storeTail = 0;
-			storeBcnt = 0;
-			storeHead = 0;
-			clearData = 0;
-
-		end else if ((rxDecBuf == SP_SYNC) && !rxStateEscReg) begin		
-			rxDecNextState = RXD_BCNT;
-			storeHead = 1;
-			clearData = 1;
-			
-			storeData = 0;
-			rxEscFlag = 0;
-			storeTail = 0;
-			storeBcnt = 0;
-		end else begin
-			rxEscFlag = 0; //always clear esc flag
-			case (rxDecState)
-		
-				RXD_IDLE: begin
-					
-					clearData = 0;
-					storeData = 0;
-					storeTail = 0;
-					storeBcnt = 0;
-					storeHead = 0;
-					rxDecNextState = RXD_IDLE;
-				
-				end
-				
-				RXD_BCNT: begin
-					storeData = 0;
-					storeTail = 0;
-					storeHead = 0;
-					storeBcnt = 1;
-					clearData = 0;
-					rxDecNextState = RXD_BODY;
-					
-				end
-				
-				RXD_HEAD: begin
-					storeData = 0;
-					storeTail = 0;
-					storeBcnt = 0;
-					storeHead = 0;
-					clearData = 0;
-					rxDecNextState = RXD_IDLE;
-					/*if(rxDecBuf == 8'b01111110) begin
-						rxDecNextState = RXD_BCNT;
-						storeHead = 1;
-						clearData = 1;
-					end else begin 
-						rxDecNextState = RXD_HEAD;
-						storeHead = 0;
-						clearData = 0;
-					end
-					*/
-				end
-				
-				RXD_BODY: begin
-					clearData = 0;
-					storeTail = 0;
-					storeBcnt = 0;
-					storeHead = 0;
-					if ((nBytesRcvd < (nDataBytes - 1)) && (nBytesRcvd < DATAMAXBYTES)) begin
-					// If still have packets to receive	
-						rxDecNextState = RXD_BODY;
-						storeData = 1;
-					end else begin
-						rxDecNextState = RXD_HEAD;
-						storeData = 1;
-					end
-				
-				end
-
-				
-				default: begin
-					storeBcnt = 0;
-					storeHead = 0;
-					storeData = 0;
-					storeTail = 0;
-					clearData = 0;
-					rxDecNextState = RXD_IDLE;
-				end
-				
-			endcase
-		end
-	end
-	
-	
-	//======================================
-	// Pre-DECODE TRANSFER STAGE
-	//----------------------------------
-	/*Delays decode one cycle so processing of byte
-	and data storage occur the cycle after rxDecBuf has 
-	been loaded */
-	
-	reg rxDecReady;
-	
-	always @ (posedge ct_rxclk or negedge reset) begin
-			
-		if(!reset) begin
-			rxDecReady <= 0;
-			rxDecBuf <= 8'b00000000;
-		end else if(rxByteReady) begin
-			rxDecBuf <= rxUnldBuf;
-			rxDecReady <= 1;
-		end else if(rxDecReady == 1) begin
-			rxDecReady <= 0;
-		end
-	end
-	//---------------------
-	//================================
-	
-	
-	
-	//======================================
-	// DECODER STATE SEQUENTIAL LOGIC
-	
-	always @ (posedge ct_rxclk or negedge reset) begin
-		
-		if(!reset) begin
-		
-			RxDecodeReset();
-
-		end
 		else begin
 			if (rxToutCntr > rxTIMEOUT ) begin
 			// message timeout handler
 			// restart state machine and wait for new msg
-			//test2
+			
 			end
 			//rxDecBuf <= rxUnldBuf;
-			//added this comment
-			if(rxDecReady) begin 
+			if(rxByteReady) begin 
 			// advance state and process byte accordingly
 				//rxDecBuf <= rxUnldBuf;
-				
-				
 				rxToutCntr <= 0;
-				rxDecStatePrev <= rxDecState; //store prev state to jump back in case of ESC\				
+				rxDecState <= rxDecNextState;						
 				
-
-				// set ESC reg if current byte is ESC, else clear it
-				if (rxEscFlag) begin
-					//dont update state on ESC byte
-					rxStateEscReg <= 1;
-				end else begin
-					rxStateEscReg <= 0;
-					rxDecState <= rxDecNextState;
+				
+				case (rxDecState)
+			
+					RXD_IDLE: begin
+						if (rxDecNextState == RXD_HEAD) begin
+							msgHead <= rxDecBuf;
+							
+						end
+						
 					
-					if(storeHead) begin
-						msgHead <= rxDecBuf;
 					end
-					if(clearData) begin
-						nDataBytes <= 8'b0000_0000;
-						nBytesRcvd <= 8'b0000_0000;
-					end			
-					if(storeBcnt) begin
-						nDataBytes <= rxDecBuf;
+					
+					
+					RXD_BCNT: begin
+						if(storeBcnt) begin
+							nDataBytes <= rxDecBuf;
+						end
+					
 					end
-					if(storeData) begin
-						nBytesRcvd <= nBytesRcvd + 1;
-						msgData [nBytesRcvd] <= rxDecBuf;
+					
+					RXD_BODY: begin
+						if(storeData) begin
+							nBytesRcvd <= nBytesRcvd + 1;
+							msgData [nBytesRcvd] <= rxDecBuf;
+						end
+					
 					end
-				end
+					
+					RXD_TAIL: begin
+					
+					end
+					
+					default: begin
+					//
+					end
+					
+				endcase
+				
+			end
 			
-
-
-			
-			end	
 		end
-	
+
 		
 		
 	end
@@ -481,30 +378,7 @@ module ClockBaseTop(
 	
 
 	
-	///===========================================================================
-	//  LED MESSAGE DISPLAY LOGIC
-	///===========================================================================
-	reg[3:0] ledMsgInd;
-	reg[7:0] ledOutBuf;
-	always @ (posedge SRCK or negedge reset) begin
-		if (!reset) begin
-			ledMsgInd = 0;
-			ledOutBuf = 8'b00000000;
-		end else begin
-			
-			if(nBytesRcvd == 0) begin
-				ledOutBuf = 8'b00000000;
-			end else begin
-				if (ledMsgInd >= (nBytesRcvd - 1)) begin
-					ledMsgInd = 0;
-				end else begin
-					ledMsgInd = ledMsgInd + 1;
-				end	
-				
-				ledOutBuf = msgData[ledMsgInd]; 			
-			end			
-		end	
-	end	
+	
 	
 	
 	///===========================================================================

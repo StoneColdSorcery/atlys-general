@@ -1,0 +1,5 @@
+verilog work "Source/UART.v"
+verilog work "Source/ShiftRegTop.v"
+verilog work "Source/ClockDivider.v"
+verilog work "Source/ClockBaseTop.v"
+verilog work "Source/CBIOWrapper.v"
