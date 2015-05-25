@@ -166,7 +166,6 @@
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="netgen"/>
     <file xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/synthesis/ShiftRegTop_synthesis.nlf"/>
     <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="netgen/synthesis/ShiftRegTop_synthesis.v"/>
@@ -189,79 +188,90 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1431645116" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1431645116">
+    <transform xil_pn:end_ts="1432512168" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1432512168">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1432413645" xil_pn:in_ck="-7860319696837498005" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1432413645">
+    <transform xil_pn:end_ts="1432512168" xil_pn:in_ck="-7860319696837498005" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1432512168">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="Source/CBIOWrapper.v"/>
-      <outfile xil_pn:name="Source/ClockBaseTop.v"/>
-      <outfile xil_pn:name="Source/ClockDivider.v"/>
-      <outfile xil_pn:name="Source/DotDriver.v"/>
-      <outfile xil_pn:name="Source/DotTest.v"/>
-      <outfile xil_pn:name="Source/SRtest.v"/>
-      <outfile xil_pn:name="Source/ShiftRegTestbench.v"/>
-      <outfile xil_pn:name="Source/ShiftRegTop.v"/>
-      <outfile xil_pn:name="Source/UART.v"/>
-      <outfile xil_pn:name="Source/UART_9.v"/>
-      <outfile xil_pn:name="Source/UartReceiver.v"/>
-      <outfile xil_pn:name="Source/clockbasetop9.v"/>
-      <outfile xil_pn:name="Source/fulltest.v"/>
-      <outfile xil_pn:name="Source/test2sr.v"/>
-      <outfile xil_pn:name="Source/uartTest.v"/>
-    </transform>
-    <transform xil_pn:end_ts="1432249461" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="1400455088087536238" xil_pn:start_ts="1432249461">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1432249461" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-429900969227729364" xil_pn:start_ts="1432249461">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1432249461" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="6739776442034061091" xil_pn:start_ts="1432249461">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1432413645" xil_pn:in_ck="-7860319696837498005" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1432413645">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="Source/CBIOWrapper.v"/>
-      <outfile xil_pn:name="Source/ClockBaseTop.v"/>
-      <outfile xil_pn:name="Source/ClockDivider.v"/>
-      <outfile xil_pn:name="Source/DotDriver.v"/>
-      <outfile xil_pn:name="Source/DotTest.v"/>
-      <outfile xil_pn:name="Source/SRtest.v"/>
-      <outfile xil_pn:name="Source/ShiftRegTestbench.v"/>
-      <outfile xil_pn:name="Source/ShiftRegTop.v"/>
-      <outfile xil_pn:name="Source/UART.v"/>
-      <outfile xil_pn:name="Source/UART_9.v"/>
-      <outfile xil_pn:name="Source/UartReceiver.v"/>
-      <outfile xil_pn:name="Source/clockbasetop9.v"/>
-      <outfile xil_pn:name="Source/fulltest.v"/>
-      <outfile xil_pn:name="Source/test2sr.v"/>
-      <outfile xil_pn:name="Source/uartTest.v"/>
-    </transform>
-    <transform xil_pn:end_ts="1432413647" xil_pn:in_ck="-7860319696837498005" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6023279200063909467" xil_pn:start_ts="1432413645">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Source/CBIOWrapper.v"/>
+      <outfile xil_pn:name="Source/ClockBaseTop.v"/>
+      <outfile xil_pn:name="Source/ClockDivider.v"/>
+      <outfile xil_pn:name="Source/DotDriver.v"/>
+      <outfile xil_pn:name="Source/DotTest.v"/>
+      <outfile xil_pn:name="Source/SRtest.v"/>
+      <outfile xil_pn:name="Source/ShiftRegTestbench.v"/>
+      <outfile xil_pn:name="Source/ShiftRegTop.v"/>
+      <outfile xil_pn:name="Source/UART.v"/>
+      <outfile xil_pn:name="Source/UART_9.v"/>
+      <outfile xil_pn:name="Source/UartReceiver.v"/>
+      <outfile xil_pn:name="Source/clockbasetop9.v"/>
+      <outfile xil_pn:name="Source/fulltest.v"/>
+      <outfile xil_pn:name="Source/test2sr.v"/>
+      <outfile xil_pn:name="Source/uartTest.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1432512168" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="1400455088087536238" xil_pn:start_ts="1432512168">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1432512168" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-429900969227729364" xil_pn:start_ts="1432512168">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1432512168" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="6739776442034061091" xil_pn:start_ts="1432512168">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1432512168" xil_pn:in_ck="-7860319696837498005" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1432512168">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Source/CBIOWrapper.v"/>
+      <outfile xil_pn:name="Source/ClockBaseTop.v"/>
+      <outfile xil_pn:name="Source/ClockDivider.v"/>
+      <outfile xil_pn:name="Source/DotDriver.v"/>
+      <outfile xil_pn:name="Source/DotTest.v"/>
+      <outfile xil_pn:name="Source/SRtest.v"/>
+      <outfile xil_pn:name="Source/ShiftRegTestbench.v"/>
+      <outfile xil_pn:name="Source/ShiftRegTop.v"/>
+      <outfile xil_pn:name="Source/UART.v"/>
+      <outfile xil_pn:name="Source/UART_9.v"/>
+      <outfile xil_pn:name="Source/UartReceiver.v"/>
+      <outfile xil_pn:name="Source/clockbasetop9.v"/>
+      <outfile xil_pn:name="Source/fulltest.v"/>
+      <outfile xil_pn:name="Source/test2sr.v"/>
+      <outfile xil_pn:name="Source/uartTest.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1432512170" xil_pn:in_ck="-7860319696837498005" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6023279200063909467" xil_pn:start_ts="1432512168">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="test2sr_beh.prj"/>
       <outfile xil_pn:name="test2sr_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1432413648" xil_pn:in_ck="-6222442376163698952" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="163442416695282910" xil_pn:start_ts="1432413647">
+    <transform xil_pn:end_ts="1432512171" xil_pn:in_ck="-6222442376163698952" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="163442416695282910" xil_pn:start_ts="1432512170">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="test2sr_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1430859580" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1430859580">
@@ -292,7 +302,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1432413753" xil_pn:in_ck="-7860319696837498005" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="35229639868338450" xil_pn:start_ts="1432413744">
+    <transform xil_pn:end_ts="1432512772" xil_pn:in_ck="-7860319696837498005" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="35229639868338450" xil_pn:start_ts="1432512763">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -317,7 +327,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1432413757" xil_pn:in_ck="3186242494853784294" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-8842267002026339356" xil_pn:start_ts="1432413753">
+    <transform xil_pn:end_ts="1432512777" xil_pn:in_ck="3186242494853784294" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-8842267002026339356" xil_pn:start_ts="1432512772">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="CBIOWrapper.bld"/>
@@ -326,7 +336,7 @@
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1432413770" xil_pn:in_ck="1556265478002413769" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-398923363910175968" xil_pn:start_ts="1432413757">
+    <transform xil_pn:end_ts="1432512790" xil_pn:in_ck="1556265478002413769" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="-398923363910175968" xil_pn:start_ts="1432512777">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="CBIOWrapper.pcf"/>
@@ -339,7 +349,7 @@
       <outfile xil_pn:name="CBIOWrapper_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1432413784" xil_pn:in_ck="-2930617167956024844" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-3829590541433901613" xil_pn:start_ts="1432413770">
+    <transform xil_pn:end_ts="1432512804" xil_pn:in_ck="-2930617167956024844" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-3829590541433901613" xil_pn:start_ts="1432512790">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -357,6 +367,10 @@
     <transform xil_pn:end_ts="1432413798" xil_pn:in_ck="-3034277979011692496" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1432413784">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="CBIOWrapper.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="cbiowrapper.bgn"/>
@@ -366,13 +380,12 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1432407661" xil_pn:in_ck="-593229527780316942" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="8482462020707587906" xil_pn:start_ts="1432407659">
+    <transform xil_pn:end_ts="1432413801" xil_pn:in_ck="-593229527780316942" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="8482462020707587906" xil_pn:start_ts="1432413799">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
     </transform>
-    <transform xil_pn:end_ts="1432413784" xil_pn:in_ck="-4647697182131296323" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1432413779">
+    <transform xil_pn:end_ts="1432512804" xil_pn:in_ck="-4647697182131296323" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1432512799">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="CBIOWrapper.twr"/>

@@ -237,7 +237,8 @@ module ClockBaseTop(
 	reg [7:0] nDataBytes;
 	reg [7:0] nBytesRcvd;
 	reg [7:0] rxDecBuf;
-	
+	reg [7:0] rxDecPreBuf;
+
 	reg rxEscFlag; 
 	reg rxStateReturn;
 	
@@ -259,7 +260,12 @@ module ClockBaseTop(
 					 msgData[i] <= 8'b00000000;	
 			end
 			rxDecState <= RXD_HEAD;
+			
+			
+			
+			rxDecBuf <= 8'b0000_0000;
 			msgHead <= 8'b0000_0000;
+			
 			rxStateEscReg <= 0;
 			//rxDecBuf <= 8'b0000_0000; moved to DECtransfer stage
 			msgTail <= 8'b0000_0000;
@@ -404,9 +410,9 @@ module ClockBaseTop(
 			
 		if(!reset) begin
 			rxDecReady <= 0;
-			rxDecBuf <= 8'b00000000;
+			rxDecPreBuf <= 8'b00000000;
 		end else if(rxByteReady) begin
-			rxDecBuf <= rxUnldBuf;
+			rxDecPreBuf <= rxUnldBuf;
 			rxDecReady <= 1;
 		end else if(rxDecReady == 1) begin
 			rxDecReady <= 0;
@@ -439,7 +445,7 @@ module ClockBaseTop(
 			// advance state and process byte accordingly
 				//rxDecBuf <= rxUnldBuf;
 				
-				
+				rxDecBuf <= rxDecPreBuf;
 				rxToutCntr <= 0;
 				rxDecStatePrev <= rxDecState; //store prev state to jump back in case of ESC\				
 				

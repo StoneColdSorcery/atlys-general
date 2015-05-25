@@ -32,16 +32,16 @@
 <msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 103: Assignment to <arg fmt="%s" index="1">ct_sreg</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 294: Assignment to <arg fmt="%s" index="1">storeTail</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 300: Assignment to <arg fmt="%s" index="1">storeTail</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 466: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 472: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 423: Assignment to <arg fmt="%s" index="1">msgHead</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 429: Assignment to <arg fmt="%s" index="1">msgHead</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 501: Result of <arg fmt="%d" index="1">5</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 507: Result of <arg fmt="%d" index="1">5</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 35: Net &lt;<arg fmt="%s" index="1">RCK</arg>&gt; does not have a driver.
