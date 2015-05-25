@@ -9,13 +9,13 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>CBIOWrapper (C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/CBIOWrapper.v)</SelectedItem>
+         <SelectedItem>test2sr (C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/test2sr.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >12</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >19</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000014f000000020000000000000000000000000200000064ffffffff0000008100000003000000020000014f0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>CBIOWrapper (C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/CBIOWrapper.v)</CurrentItem>
+      <CurrentItem>test2sr (C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/test2sr.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -67,26 +67,26 @@
       <SelectedItems>
          <SelectedItem></SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >13</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000b8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000b80000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000c9000000010000000100000000000000000000000064ffffffff000000810000000000000001000000c90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000017b0000017c01000000050100000002</SourceProcessView>
-   <CurrentView>Behavioral Simulation</CurrentView>
+   <CurrentView>Implementation</CurrentView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>uut - ClockBaseTop (C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/ClockBaseTop.v)</SelectedItem>
+         <SelectedItem>test2sr (C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/test2sr.v)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >19</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000014f000000020000000000000000000000000200000064ffffffff0000008100000003000000020000014f0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>uut - ClockBaseTop (C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/ClockBaseTop.v)</CurrentItem>
+      <CurrentItem>test2sr (C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/test2sr.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -107,13 +107,13 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000c9000000010000000100000000000000000000000064ffffffff000000810000000000000001000000c90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
       <ClosedNodes>

@@ -220,7 +220,7 @@ module ClockBaseTop(
 	parameter RXD_IDLE = 6'b100000,  RXD_HEAD = 6'b010000,  RXD_BCNT = 6'b001000, RXD_BODY = 6'b000100, RXD_TAIL = 6'b000010, RXD_NULL = 6'b000001;
 	parameter rxTIMEOUT = 100;
 	parameter DATAMAXBYTES = 10;
-	parameter SP_SYNC = 8'b01111110, SP_ESC = 8'b00000010, SP_END = 8'b00000011;
+	parameter SP_SYNC = 8'b01111110, SP_ESC = 8'b11111110, SP_END = 8'b00000011;
 	
 	reg [5:0] rxDecState;
 	reg [5:0] rxDecStatePrev; // temp reg to restore prev state after esc bytes
@@ -263,7 +263,7 @@ module ClockBaseTop(
 			
 			
 			
-			rxDecBuf <= 8'b0000_0000;
+			//rxDecBuf <= 8'b0000_0000;
 			msgHead <= 8'b0000_0000;
 			
 			rxStateEscReg <= 0;
@@ -410,9 +410,11 @@ module ClockBaseTop(
 			
 		if(!reset) begin
 			rxDecReady <= 0;
-			rxDecPreBuf <= 8'b00000000;
+			rxDecBuf <= 8'b00000000;
+			//rxDecPreBuf <= 8'b00000000;
 		end else if(rxByteReady) begin
-			rxDecPreBuf <= rxUnldBuf;
+			rxDecBuf <= rxUnldBuf;
+			//rxDecPreBuf <= rxUnldBuf;
 			rxDecReady <= 1;
 		end else if(rxDecReady == 1) begin
 			rxDecReady <= 0;
@@ -445,7 +447,7 @@ module ClockBaseTop(
 			// advance state and process byte accordingly
 				//rxDecBuf <= rxUnldBuf;
 				
-				rxDecBuf <= rxDecPreBuf;
+				//rxDecBuf <= rxDecPreBuf;
 				rxToutCntr <= 0;
 				rxDecStatePrev <= rxDecState; //store prev state to jump back in case of ESC\				
 				
