@@ -248,6 +248,8 @@ module ClockBaseTop(
 	reg rxStateReturn;
 	reg rxMsgRetrieve;
 	reg msgComplete;
+	reg rxMsgFresh;
+	reg newMsg;
 	
 	reg storeHead;
 	reg storeData;
@@ -270,6 +272,8 @@ module ClockBaseTop(
 			
 			
 			rxMsgRetrieve <=0;
+			rxMsgFresh <=0;
+			newMsg <=0;
 			//rxDecBuf <= 8'b0000_0000;
 			msgHead <= 8'b0000_0000;
 			
@@ -324,7 +328,7 @@ module ClockBaseTop(
 			rxDecNextState = RXD_BCNT;
 			storeHead = 1;
 			clearData = 1;
-			
+			newMsg = 1;
 			storeData = 0;
 			rxEscFlag = 0;
 			storeTail = 0;
@@ -335,7 +339,7 @@ module ClockBaseTop(
 			case (rxDecState)
 		
 				RXD_IDLE: begin
-					
+					newMsg = 0;
 					msgComplete = 0;
 					clearData = 0;
 					storeData = 0;
@@ -347,6 +351,7 @@ module ClockBaseTop(
 				end
 				
 				RXD_BCNT: begin
+					newMsg = 0;
 					msgComplete = 0;
 					storeData = 0;
 					storeTail = 0;
@@ -358,6 +363,7 @@ module ClockBaseTop(
 				end
 				
 				RXD_HEAD: begin
+					newMsg = 0;
 					msgComplete = 0;
 					storeData = 0;
 					storeTail = 0;
@@ -378,6 +384,7 @@ module ClockBaseTop(
 				end
 				
 				RXD_BODY: begin
+					newMsg = 0;
 					msgComplete = 0;
 					clearData = 0;
 					storeTail = 0;
@@ -395,6 +402,7 @@ module ClockBaseTop(
 				end
 
 				RXD_TAIL: begin
+					newMsg = 0;
 					msgComplete = 1;
 					storeData = 0;
 					storeTail = 0;
@@ -415,6 +423,7 @@ module ClockBaseTop(
 				end
 				
 				default: begin
+					newMsg = 0;
 					msgComplete = 0;
 					storeBcnt = 0;
 					storeHead = 0;
@@ -474,12 +483,16 @@ module ClockBaseTop(
 			//test2
 			end
 			
-			if(msgComplete)begin
-			 rxMsgRetrieve <= 1;
-			
-			end else if(rxMsgRetrieve) begin
-				rxMsgRetrieve <=0;
+			if(newMsg && (!rxMsgFresh)) begin
+				rxMsgFresh <=1;
 			end
+			
+			if(rxMsgRetrieve) begin
+				rxMsgRetrieve <=0;
+			end else if(msgComplete && rxMsgFresh)begin
+				rxMsgRetrieve <= 1;			
+				rxMsgFresh <=0;
+			end 
 			
 			
 			

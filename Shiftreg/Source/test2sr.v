@@ -95,6 +95,27 @@ module test2sr;
 		end
 	end
 	
+	task msgDM_enable;
+		begin
+		uartsend(8'b01111110);
+		uartsend(8'b00000100);
+		uartsend(8'b10101000);
+		uartsend(8'b00000000);
+		uartsend(8'b00000000);
+		uartsend(8'b00000000);
+		end
+	endtask
+	//task msgDM_set(input [4:0] col, input [6:0] rowdata);
+	task msgDM_set;
+		begin
+		uartsend(8'b01111110);
+		uartsend(8'b00000100);
+		uartsend(8'b10101100);
+		uartsend(8'b00000001);
+		uartsend(8'b10101010);
+		uartsend(8'b00000000);
+		end
+	endtask
 	//assign UartRx_Pin = (sendOut == 1'bx) ? 1'b1 : sendOut;
 	/*
 	always @ (sendByte or us_enable) begin
@@ -134,8 +155,11 @@ module test2sr;
 	
 		//sendByte = 8'b11110100;
 		
-		
-		
+		#1000;
+		msgDM_enable;
+		#1000;
+		msgDM_set;
+		/*
 		//uartsend(0'b11110100,us_enable, UartRx_Pin);
 		uartsend(8'b11110100);
 		#1000;
@@ -203,6 +227,8 @@ module test2sr;
 		uartsend(8'b00000000);	
 		#100
 		printData;
+		
+		*/
 	end
 	
 	always #5 CLK = ~CLK;

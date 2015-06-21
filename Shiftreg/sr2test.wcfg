@@ -10,115 +10,203 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="27" />
-   <wvobject fp_name="/test2sr/Led" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">Led[7:0]</obj_property>
-      <obj_property name="ObjectShortName">Led[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/CLK" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">CLK</obj_property>
-      <obj_property name="ObjectShortName">CLK</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/sw" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">sw</obj_property>
-      <obj_property name="ObjectShortName">sw</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/reset" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/UartRx_Pin" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">UartRx_Pin</obj_property>
-      <obj_property name="ObjectShortName">UartRx_Pin</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/sendOut" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">sendOut</obj_property>
-      <obj_property name="ObjectShortName">sendOut</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/us_enable" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">us_enable</obj_property>
-      <obj_property name="ObjectShortName">us_enable</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/storeHead" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">storeHead</obj_property>
-      <obj_property name="ObjectShortName">storeHead</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/storeData" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">storeData</obj_property>
-      <obj_property name="ObjectShortName">storeData</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/storeTail" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">storeTail</obj_property>
-      <obj_property name="ObjectShortName">storeTail</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/storeBcnt" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">storeBcnt</obj_property>
-      <obj_property name="ObjectShortName">storeBcnt</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/clearData" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">clearData</obj_property>
-      <obj_property name="ObjectShortName">clearData</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/rxDecBuf" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">rxDecBuf[7:0]</obj_property>
-      <obj_property name="ObjectShortName">rxDecBuf[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/nBytesRcvd" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">nBytesRcvd[7:0]</obj_property>
-      <obj_property name="ObjectShortName">nBytesRcvd[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/nDataBytes" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">nDataBytes[7:0]</obj_property>
-      <obj_property name="ObjectShortName">nDataBytes[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/rxToutCntr" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">rxToutCntr[31:0]</obj_property>
-      <obj_property name="ObjectShortName">rxToutCntr[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/msgTail" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">msgTail[7:0]</obj_property>
-      <obj_property name="ObjectShortName">msgTail[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/msgData" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">msgData[9:0,7:0]</obj_property>
-      <obj_property name="ObjectShortName">msgData[9:0,7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/msgHead" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">msgHead[7:0]</obj_property>
-      <obj_property name="ObjectShortName">msgHead[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/rxDecNextState" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">rxDecNextState[5:0]</obj_property>
-      <obj_property name="ObjectShortName">rxDecNextState[5:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/rxDecState" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">rxDecState[5:0]</obj_property>
-      <obj_property name="ObjectShortName">rxDecState[5:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/rxByteReady" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">rxByteReady</obj_property>
-      <obj_property name="ObjectShortName">rxByteReady</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/rxDecReady" type="logic" db_ref_id="1">
+   <WVObjectSize size="4" />
+   <wvobject fp_name="group28" type="group">
+      <obj_property name="label">clocktop main</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">rxDecReady</obj_property>
-      <obj_property name="ObjectShortName">rxDecReady</obj_property>
-      <obj_property name="label">rxDecReady</obj_property>
+      <wvobject fp_name="/test2sr/Led" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">Led[7:0]</obj_property>
+         <obj_property name="ObjectShortName">Led[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/CLK" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CLK</obj_property>
+         <obj_property name="ObjectShortName">CLK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/sw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sw</obj_property>
+         <obj_property name="ObjectShortName">sw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/reset" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/UartRx_Pin" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">UartRx_Pin</obj_property>
+         <obj_property name="ObjectShortName">UartRx_Pin</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/sendOut" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sendOut</obj_property>
+         <obj_property name="ObjectShortName">sendOut</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/us_enable" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">us_enable</obj_property>
+         <obj_property name="ObjectShortName">us_enable</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/storeHead" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">storeHead</obj_property>
+         <obj_property name="ObjectShortName">storeHead</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/storeData" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">storeData</obj_property>
+         <obj_property name="ObjectShortName">storeData</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/storeTail" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">storeTail</obj_property>
+         <obj_property name="ObjectShortName">storeTail</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/storeBcnt" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">storeBcnt</obj_property>
+         <obj_property name="ObjectShortName">storeBcnt</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/clearData" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clearData</obj_property>
+         <obj_property name="ObjectShortName">clearData</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/rxDecBuf" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rxDecBuf[7:0]</obj_property>
+         <obj_property name="ObjectShortName">rxDecBuf[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/nBytesRcvd" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">nBytesRcvd[7:0]</obj_property>
+         <obj_property name="ObjectShortName">nBytesRcvd[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/nDataBytes" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">nDataBytes[7:0]</obj_property>
+         <obj_property name="ObjectShortName">nDataBytes[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/rxToutCntr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rxToutCntr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rxToutCntr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/msgTail" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">msgTail[7:0]</obj_property>
+         <obj_property name="ObjectShortName">msgTail[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/msgData" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">msgData[9:0,7:0]</obj_property>
+         <obj_property name="ObjectShortName">msgData[9:0,7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/msgHead" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">msgHead[7:0]</obj_property>
+         <obj_property name="ObjectShortName">msgHead[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/rxDecNextState" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rxDecNextState[5:0]</obj_property>
+         <obj_property name="ObjectShortName">rxDecNextState[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/rxDecState" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rxDecState[5:0]</obj_property>
+         <obj_property name="ObjectShortName">rxDecState[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/rxByteReady" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rxByteReady</obj_property>
+         <obj_property name="ObjectShortName">rxByteReady</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/rxDecReady" type="logic" db_ref_id="1">
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="ElementShortName">rxDecReady</obj_property>
+         <obj_property name="ObjectShortName">rxDecReady</obj_property>
+         <obj_property name="label">rxDecReady</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/rxEscFlag" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rxEscFlag</obj_property>
+         <obj_property name="ObjectShortName">rxEscFlag</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/rxStateEscReg" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rxStateEscReg</obj_property>
+         <obj_property name="ObjectShortName">rxStateEscReg</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/ledOutBuf" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ledOutBuf[7:0]</obj_property>
+         <obj_property name="ObjectShortName">ledOutBuf[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/ledMsgInd" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ledMsgInd[3:0]</obj_property>
+         <obj_property name="ObjectShortName">ledMsgInd[3:0]</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/test2sr/uut/rxEscFlag" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">rxEscFlag</obj_property>
-      <obj_property name="ObjectShortName">rxEscFlag</obj_property>
+   <wvobject fp_name="group29" type="group">
+      <obj_property name="label">message handler, Dotmatrix</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/test2sr/uut/instance_name/Msg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">Msg[31:0]</obj_property>
+         <obj_property name="ObjectShortName">Msg[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/msgReady" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">msgReady</obj_property>
+         <obj_property name="ObjectShortName">msgReady</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/reset" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/msgdata" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">msgdata[3:0,7:0]</obj_property>
+         <obj_property name="ObjectShortName">msgdata[3:0,7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/devaddr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">devaddr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">devaddr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/devop" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">devop[3:0]</obj_property>
+         <obj_property name="ObjectShortName">devop[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/DMwrite" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DMwrite</obj_property>
+         <obj_property name="ObjectShortName">DMwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/DMenable" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">DMenable</obj_property>
+         <obj_property name="ObjectShortName">DMenable</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/DMcolAddr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">DMcolAddr[4:0]</obj_property>
+         <obj_property name="ObjectShortName">DMcolAddr[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/DMrowin" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">DMrowin[6:0]</obj_property>
+         <obj_property name="ObjectShortName">DMrowin[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/opExecute" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">opExecute</obj_property>
+         <obj_property name="ObjectShortName">opExecute</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/DEV_DOTMTX" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">DEV_DOTMTX[3:0]</obj_property>
+         <obj_property name="ObjectShortName">DEV_DOTMTX[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/DMTX_EN" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">DMTX_EN[3:0]</obj_property>
+         <obj_property name="ObjectShortName">DMTX_EN[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/DMTX_DIS" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">DMTX_DIS[3:0]</obj_property>
+         <obj_property name="ObjectShortName">DMTX_DIS[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/DMTX_SET" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">DMTX_SET[3:0]</obj_property>
+         <obj_property name="ObjectShortName">DMTX_SET[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/DMTX_WON" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">DMTX_WON[3:0]</obj_property>
+         <obj_property name="ObjectShortName">DMTX_WON[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/test2sr/uut/instance_name/DMTX_WOFF" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">DMTX_WOFF[3:0]</obj_property>
+         <obj_property name="ObjectShortName">DMTX_WOFF[3:0]</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/test2sr/uut/rxStateEscReg" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">rxStateEscReg</obj_property>
-      <obj_property name="ObjectShortName">rxStateEscReg</obj_property>
+   <wvobject fp_name="/test2sr/uut/colOut" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">colOut[4:0]</obj_property>
+      <obj_property name="ObjectShortName">colOut[4:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/test2sr/uut/ledOutBuf" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">ledOutBuf[7:0]</obj_property>
-      <obj_property name="ObjectShortName">ledOutBuf[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/test2sr/uut/ledMsgInd" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">ledMsgInd[3:0]</obj_property>
-      <obj_property name="ObjectShortName">ledMsgInd[3:0]</obj_property>
+   <wvobject fp_name="/test2sr/uut/rowOut" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rowOut[6:0]</obj_property>
+      <obj_property name="ObjectShortName">rowOut[6:0]</obj_property>
    </wvobject>
 </wave_config>
