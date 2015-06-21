@@ -1,9 +1,6 @@
-set -tmpdir "xst/projnav.tmp"
-set -xsthdpdir "xst"
-run
--ifn ClockBaseTop.prj
--ofn ClockBaseTop
--ofmt NGC
+set -tmpdir "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/xst"
+run -compileonly yes
 -p xc6slx45-2-csg324
 -top ClockBaseTop
 -opt_mode Speed
@@ -50,3 +47,4 @@ run
 -iob Auto
 -equivalent_register_removal YES
 -slice_utilization_ratio_maxmargin 5
+-ifn ClockBaseTop.prj

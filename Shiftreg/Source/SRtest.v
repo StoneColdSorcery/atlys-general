@@ -30,7 +30,7 @@ module SRtest;
 	reg reset;
 	// Outputs
 	wire [7:0] Led;
-
+  
 	// Instantiate the Unit Under Test (UUT)
 	ClockBaseTop uut (
 		.CLK(CLK), 

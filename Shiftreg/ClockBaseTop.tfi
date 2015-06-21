@@ -7,7 +7,7 @@ ClockBaseTop instance_name (
     .sw(sw), 
     .reset(reset), 
     .ct_UartRx(ct_UartRx), 
-    .Led(Led)
+    .ct_Led(ct_Led)
     );
 
 

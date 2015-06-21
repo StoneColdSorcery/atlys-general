@@ -1,6 +1,7 @@
 verilog work "Source/UART.v"
-verilog work "Source/ShiftRegTop.v"
+verilog work "Source/DotDriver.v"
 verilog work "Source/ClockDivider.v"
+verilog work "MessageHandler.v"
 verilog work "Source/ClockBaseTop.v"
 verilog work "Source/test2sr.v"
 verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

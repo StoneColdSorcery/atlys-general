@@ -28,11 +28,14 @@ module ClockBaseTop(
 	//input        ct_tx_enable,
 	//input        ct_rx_enable,
 	//input        ct_rx_in,
-	output [7:0] ct_Led      
+	output [7:0] ct_Led,
+	output [4:0] colOut,
+	output [6:0] rowOut
 );
 	
 	
 	wire SRCK, RCK, EN, CLR;
+	wire DMcolclk;
 	wire [7:0] ct_sreg;
 	wire ct_rx_in;
 	wire [7:0] ct_rx_data;
@@ -94,6 +97,7 @@ module ClockBaseTop(
 		.rx_empty(ct_rx_empty)
 		);
 	
+	/*
 	ShiftRegTop ShiftReg (
 		.SIN(sw), 
 		.SRCK(SRCK), 
@@ -102,23 +106,24 @@ module ClockBaseTop(
 		.CLR(reset), 
 		.Sreg(ct_sreg)
 	);
-	
+	*/
 	
 	`ifdef XILINX_ISIM
 		defparam SRclkdiv.divval = 32'd100;
 	`else
-		defparam SRclkdiv.divval = 32'd50_000_000;
+		defparam SRclkdiv.divval = 32'd10_000_000;
 	`    endif
 	
 	
 	
 	defparam RXclkdiv.divval = 52;
 	
-	ClockDivider SRclkdiv (
+		ClockDivider SRclkdiv (
 	.clk_in(CLK),
 	.reset(reset),
-	.clk_out(SRCK)
+	.clk_out(DMcolclk)
 	);
+
 
 	ClockDivider RXclkdiv (
 	.clk_in(CLK),
@@ -241,6 +246,8 @@ module ClockBaseTop(
 
 	reg rxEscFlag; 
 	reg rxStateReturn;
+	reg rxMsgRetrieve;
+	reg msgComplete;
 	
 	reg storeHead;
 	reg storeData;
@@ -262,7 +269,7 @@ module ClockBaseTop(
 			rxDecState <= RXD_HEAD;
 			
 			
-			
+			rxMsgRetrieve <=0;
 			//rxDecBuf <= 8'b0000_0000;
 			msgHead <= 8'b0000_0000;
 			
@@ -312,7 +319,7 @@ module ClockBaseTop(
 			storeBcnt = 0;
 			storeHead = 0;
 			clearData = 0;
-
+			msgComplete = 0;
 		end else if ((rxDecBuf == SP_SYNC) && !rxStateEscReg) begin		
 			rxDecNextState = RXD_BCNT;
 			storeHead = 1;
@@ -322,12 +329,14 @@ module ClockBaseTop(
 			rxEscFlag = 0;
 			storeTail = 0;
 			storeBcnt = 0;
+			msgComplete = 0;
 		end else begin
 			rxEscFlag = 0; //always clear esc flag
 			case (rxDecState)
 		
 				RXD_IDLE: begin
 					
+					msgComplete = 0;
 					clearData = 0;
 					storeData = 0;
 					storeTail = 0;
@@ -338,6 +347,7 @@ module ClockBaseTop(
 				end
 				
 				RXD_BCNT: begin
+					msgComplete = 0;
 					storeData = 0;
 					storeTail = 0;
 					storeHead = 0;
@@ -348,6 +358,7 @@ module ClockBaseTop(
 				end
 				
 				RXD_HEAD: begin
+					msgComplete = 0;
 					storeData = 0;
 					storeTail = 0;
 					storeBcnt = 0;
@@ -367,6 +378,7 @@ module ClockBaseTop(
 				end
 				
 				RXD_BODY: begin
+					msgComplete = 0;
 					clearData = 0;
 					storeTail = 0;
 					storeBcnt = 0;
@@ -376,14 +388,34 @@ module ClockBaseTop(
 						rxDecNextState = RXD_BODY;
 						storeData = 1;
 					end else begin
-						rxDecNextState = RXD_HEAD;
+						rxDecNextState = RXD_TAIL;
 						storeData = 1;
 					end
 				
 				end
 
+				RXD_TAIL: begin
+					msgComplete = 1;
+					storeData = 0;
+					storeTail = 0;
+					storeBcnt = 0;
+					storeHead = 0;
+					clearData = 0;
+					rxDecNextState = RXD_IDLE;
+					/*if(rxDecBuf == 8'b01111110) begin
+						rxDecNextState = RXD_BCNT;
+						storeHead = 1;
+						clearData = 1;
+					end else begin 
+						rxDecNextState = RXD_HEAD;
+						storeHead = 0;
+						clearData = 0;
+					end
+					*/
+				end
 				
 				default: begin
+					msgComplete = 0;
 					storeBcnt = 0;
 					storeHead = 0;
 					storeData = 0;
@@ -433,7 +465,7 @@ module ClockBaseTop(
 		if(!reset) begin
 		
 			RxDecodeReset();
-
+					
 		end
 		else begin
 			if (rxToutCntr > rxTIMEOUT ) begin
@@ -441,6 +473,16 @@ module ClockBaseTop(
 			// restart state machine and wait for new msg
 			//test2
 			end
+			
+			if(msgComplete)begin
+			 rxMsgRetrieve <= 1;
+			
+			end else if(rxMsgRetrieve) begin
+				rxMsgRetrieve <=0;
+			end
+			
+			
+			
 			//rxDecBuf <= rxUnldBuf;
 			//added this comment
 			if(rxDecReady) begin 
@@ -464,6 +506,7 @@ module ClockBaseTop(
 						msgHead <= rxDecBuf;
 					end
 					if(clearData) begin
+						RxDataClear; //reset msgData
 						nDataBytes <= 8'b0000_0000;
 						nBytesRcvd <= 8'b0000_0000;
 					end			
@@ -486,9 +529,49 @@ module ClockBaseTop(
 		
 	end
 	
+	///===========================================================================
+	//  MESSAGE HANDLER AND DISTRIBUTION LOGIC
+	///===========================================================================
+	wire DMwrite_top,DMenable_top;
+	wire [4:0] DMcolAddr_top;
+	wire [6:0] DMrowin_top;
+	wire [31:0] msg_top; 
 	
+	assign msg_top = {msgData[0],msgData[1],msgData[2],msgData[3]};
 
+	// Instantiate the module
+	MessageHandler instance_name (
+		 .Msg(msg_top), 
+		 .msgReady(rxMsgRetrieve), 
+		 .clk(ct_rxclk), 
+		 .reset(reset), 
+		 .DMwrite(DMwrite_top), 
+		 .DMenable(DMenable_top), 
+		 .DMcolAddr(DMcolAddr_top), 
+		 .DMrowin(DMrowin_top)
+		 );
+		
+
+		
+	///===========================================================================
+	//  DOT MATRIX CONTROLLER
+	///===========================================================================	
 	
+	
+	
+			// Instantiate the module
+	DotController dotcontroller(
+		 .colAddr(DMcolAddr_top), 
+		 .rowIn(DMrowin_top), 
+		 .enable(DMenable_top), 
+		 .write(DMwrite_top), 
+		 .reset(reset), 
+		 .logicclk(ct_rxclk), 
+		 .colclk(DMcolclk), 
+		 .colOut(colOut), 
+		 .rowOut(rowOut)
+		 );
+
 	///===========================================================================
 	//  LED MESSAGE DISPLAY LOGIC
 	///===========================================================================

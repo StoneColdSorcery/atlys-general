@@ -34,7 +34,8 @@ module test2sr;
 	// Outputs
 	wire [7:0] Led;
 	reg [7:0] sendByte;
-
+	wire [6:0] rowOut;
+	wire [4:0] colOut;
 	// Instantiate the Unit Under Test (UUT)
 	ClockBaseTop uut (
 		.CLK(CLK), 
@@ -45,6 +46,23 @@ module test2sr;
 	);
 	
 
+
+
+	task printData;
+	integer j;
+	
+	begin
+		for (j = 0; j < 10; j = j + 1) begin
+			$write("%0d: %b",j,uut.msgData[j]);	
+			if(j != 9) begin
+			$write(", ");
+			end else begin
+			$write("\n-------\n");
+			end
+		end
+	end
+	endtask
+	
 	task uartsend;
 	
 	input [8:0] byteToSend;
@@ -134,13 +152,14 @@ module test2sr;
 		uartsend(8'b01111110);
 		#100;
 		uartsend(8'b00000001);
-		#1000;
-		//#600000;
-		uartsend(8'b01111110);
-		
-		//uartsend(8'b01111110);
 		#100;
-		uartsend(8'b00000110);
+		//#600000;
+		printData;
+		
+		//-------------------------
+		uartsend(8'b01111110);
+		#100;
+		uartsend(8'b00001000);
 		#100;
 		uartsend(8'b11000000);
 		#100;
@@ -154,6 +173,36 @@ module test2sr;
 		uartsend(8'b11111100);
 		#100;
 		uartsend(8'b11111111);
+		
+		printData;
+		//-------------------------
+		uartsend(8'b01111110);
+		#100;
+		uartsend(8'b00001000);
+		#100;
+		uartsend(8'b00001111);
+		#100;
+		uartsend(8'b11110000);		
+		#100;
+		uartsend(8'b00000000);	
+		#100
+		printData;
+		//-------------------------
+		uartsend(8'b01111110);
+		#100;
+		uartsend(8'b11111110);
+		#100;
+		uartsend(8'b00000011);
+		#100;
+		uartsend(8'b00000000);	
+		#100;
+		uartsend(8'b11111110);		
+		#100;
+		uartsend(8'b00000000);	
+		#100;
+		uartsend(8'b00000000);	
+		#100
+		printData;
 	end
 	
 	always #5 CLK = ~CLK;

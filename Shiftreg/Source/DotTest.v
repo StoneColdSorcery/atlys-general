@@ -89,7 +89,7 @@ endmodule
 
 */
 
-module DotTest;
+   module DotTest;
 
 	// Inputs
 	reg [4:0] colAddr;
@@ -136,11 +136,20 @@ module DotTest;
 		#10;
 		colAddr = 5'd1;
 		rowIn = 7'b0000001;
-		#10; 
-		rowIn = 7'b1000001;
 		#30; 
-		rowIn = 7'b1100001;
-		#30; 		
+		colAddr = 5'd2;
+		rowIn = 7'b0000011;
+		#30; 		 
+		colAddr = 5'd3;
+		rowIn = 7'b0000111;
+		#30;
+		colAddr = 5'd4;
+		rowIn = 7'b0011111;
+		#30; 	
+		#30; 
+		colAddr = 5'd0;
+		rowIn = 7'b1111111;
+		#30; 	
 
 		write = 0;	
 		#10;

@@ -83,9 +83,10 @@ module DotController(
 	 input enable,
 	 input write,
 	 input reset,
-    input clk,
-    output [4:0] colOut,
-    output [6:0] rowOut
+    input logicclk,
+	 input colclk,
+    output reg [4:0] colOut,
+    output reg [6:0] rowOut
     );
 	
 	reg [6:0] mtxData [0:4];
@@ -96,11 +97,49 @@ module DotController(
 	
 	reg[4:0] colState;
 
-	reg[6:0] rowOut;
-	reg[4:0] colOut;
+	//reg[6:0] rowOut;
+	//reg[4:0] colOut;
+	
+	always @ (posedge colclk or negedge reset) begin
+		
+		if(!reset) begin
+			colState <= 5'd0;
+			rowOut <= 7'b0000000;
+			colOut <= 5'b00000;
+			
+			colLut[0] = 5'b10000;
+			colLut[1] = 5'b01000;			 
+			colLut[2] = 5'b00100;
+			colLut[3] = 5'b00010;
+			colLut[4] = 5'b00001;
+		end else begin
+
+			if(enable) begin
+
+				//increment col sink counter
+				
+					
+				rowOut <= mtxData[colState];
+				colOut <= colLut[colState];
+				
+				
+				//state counter incr
+				if (colState < 5'd4) begin
+					colState <= colState + 1;
+				end
+				else begin
+					colState <= 5'd0;
+				end
+			end
+		end
 	
 	
-	always @ (posedge clk or negedge reset) begin
+	end
+	
+	
+	
+	
+	always @ (posedge logicclk or negedge reset) begin
 		if(~reset) begin
 			
 			mtxData[0] <= {7'b0000000};
@@ -109,11 +148,6 @@ module DotController(
 			mtxData[3] <= {7'b0000000};
 			mtxData[4] <= {7'b0000000};
 			
-			colLut[0] = 5'b10000;
-			colLut[1] = 5'b01000;			
-			colLut[2] = 5'b00100;
-			colLut[3] = 5'b00010;
-			colLut[4] = 5'b00001;
 			
 			colState <= 5'd0;
 			rowOut <= 7'b0000000;
@@ -122,19 +156,6 @@ module DotController(
 		else if(enable) begin
 
 			//increment col sink counter
-			
-				
-			rowOut <= mtxData[colState];
-			colOut <= colLut[colState];
-			
-			
-			//state counter incr
-			if (colState < 5'd4) begin
-				colState <= colState + 1;
-			end
-			else begin
-				colState <= 5'd0;
-			end
 			
 			//if write mode update preload regs
 			if (write) begin

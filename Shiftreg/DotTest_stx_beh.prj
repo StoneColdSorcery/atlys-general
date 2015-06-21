@@ -1,3 +1,3 @@
-verilog isim_temp "DotDriver.v"
-verilog isim_temp "DotTest.v"
+verilog isim_temp "Source/DotDriver.v"
+verilog isim_temp "Source/DotTest.v"
 verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
