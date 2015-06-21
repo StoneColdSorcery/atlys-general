@@ -26,7 +26,8 @@ Compiling module ClockBaseTop
 Compiling module test2sr
 Compiling module glbl
 Time Resolution for simulation is 1ps.
+Waiting for 2 sub-compilation(s) to finish...
 Compiled 8 Verilog Units
 Built simulation executable C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/test2sr_isim_beh.exe
-Fuse Memory Usage: 29380 KB
-Fuse CPU Usage: 389 ms
+Fuse Memory Usage: 29420 KB
+Fuse CPU Usage: 342 ms

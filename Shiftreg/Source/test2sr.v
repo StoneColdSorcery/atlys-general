@@ -105,15 +105,16 @@ module test2sr;
 		uartsend(8'b00000000);
 		end
 	endtask
-	//task msgDM_set(input [4:0] col, input [6:0] rowdata);
-	task msgDM_set;
+	
+	task msgDM_set(input [4:0] col, input [6:0] rowdata);
+
 		begin
 		uartsend(8'b01111110);
-		uartsend(8'b00000100);
+		uartsend(8'b00000011);
 		uartsend(8'b10101100);
-		uartsend(8'b00000001);
-		uartsend(8'b10101010);
-		uartsend(8'b00000000);
+		uartsend({3'b000,col});
+		uartsend({1'b0,rowdata});
+		//uartsend(8'b00000000);
 		end
 	endtask
 	//assign UartRx_Pin = (sendOut == 1'bx) ? 1'b1 : sendOut;
@@ -158,7 +159,12 @@ module test2sr;
 		#1000;
 		msgDM_enable;
 		#1000;
-		msgDM_set;
+		msgDM_set(0,7'b1111111);
+		msgDM_set(1,7'b1111100);
+		msgDM_set(2,7'b1111000);
+		msgDM_set(3,7'b1100000);
+		msgDM_set(4,7'b1000000);
+		//msgDM_set(5'd2,7'b1111000);
 		/*
 		//uartsend(0'b11110100,us_enable, UartRx_Pin);
 		uartsend(8'b11110100);
