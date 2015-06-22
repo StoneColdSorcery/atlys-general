@@ -149,9 +149,6 @@ module DotController(
 			mtxData[4] <= {7'b0000000};
 			
 			
-			colState <= 5'd0;
-			rowOut <= 7'b0000000;
-			colOut <= 5'b00000;
 		end
 		else if(enable) begin
 

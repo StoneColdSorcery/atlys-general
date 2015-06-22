@@ -273,7 +273,7 @@ module ClockBaseTop(
 			
 			rxMsgRetrieve <=0;
 			rxMsgFresh <=0;
-			newMsg <=0;
+
 			//rxDecBuf <= 8'b0000_0000;
 			msgHead <= 8'b0000_0000;
 			

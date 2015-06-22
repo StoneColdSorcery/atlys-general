@@ -20,23 +20,36 @@
 //////////////////////////////////////////////////////////////////////////////////
 module CBIOWrapper(
 	 input CLK,
-	 input reset,
+	 input btn,
 	 input sw,
-    input [19:0] VHDCIIO1,
-    output [19:0] VHDCIIO2,
+    input VHDC_UARTRX,
+	 output VHDC_UARTRX_BOUNCE,
+	 output VHDC_SYSACTIVE,
+    output [4:0] VHDC_COL,
+	 output [6:0] VHDC_ROW,
     output [7:0] Led
    
     );
 	 
-	 assign VHDCIIO2 = 20'd0;
+	 wire reset;
+	 assign reset = btn;
+	 
+	 assign VHDC_UARTRX_BOUNCE = VHDC_UARTRX;
+	 assign VHDC_SYSACTIVE = ~reset;
+	 
+	wire [7:0]Led_wrap;
+	
+	assign Led =  (reset) ? Led_wrap : 8'b11000011;
 	 
 	 // Instantiate the module
 	ClockBaseTop clockbasetop (
     .CLK(CLK), 
     .sw(sw), 
     .reset(reset), 
-    .ct_UartRx(VHDCIIO1[13]), 
-    .ct_Led(Led)
+    .ct_UartRx(VHDC_UARTRX), 
+    .ct_Led(Led_wrap),
+	 .colOut(VHDC_COL),
+	 .rowOut(VHDC_ROW)
     );
 
 
