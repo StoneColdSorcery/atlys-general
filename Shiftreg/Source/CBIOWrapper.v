@@ -25,13 +25,17 @@ module CBIOWrapper(
     input VHDC_UARTRX,
 	 output VHDC_UARTRX_BOUNCE,
 	 output VHDC_SYSACTIVE,
-    output [4:0] VHDC_COL,
-	 output [6:0] VHDC_ROW,
+    output [11:0] VHDCIIO1,
     output [7:0] Led
    
     );
 	 
 	 wire reset;
+	 wire [6:0] VHDC_COL;
+	 wire [4:0] VHDC_ROW;
+	 
+	 assign VHDCIIO1 = {VHDC_COL,VHDC_ROW};
+	 
 	 assign reset = btn;
 	 
 	 assign VHDC_UARTRX_BOUNCE = VHDC_UARTRX;

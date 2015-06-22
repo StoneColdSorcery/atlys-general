@@ -37,7 +37,7 @@ Setup/Hold to clock CLK
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-reset       |    9.518(R)|      SLOW  |   -3.495(R)|      FAST  |CLK_BUFGP         |   0.000|
+btn         |    9.605(R)|      SLOW  |   -3.857(R)|      FAST  |CLK_BUFGP         |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock to Setup on destination clock CLK
@@ -45,18 +45,30 @@ Clock to Setup on destination clock CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    3.902|         |         |         |
+CLK            |    3.771|         |         |         |
 ---------------+---------+---------+---------+---------+
 
+Pad to Pad
+---------------+------------------+---------+
+Source Pad     |Destination Pad   |  Delay  |
+---------------+------------------+---------+
+VHDC_UARTRX    |VHDC_UARTRX_BOUNCE|    7.406|
+btn            |Led<0>            |   13.511|
+btn            |Led<1>            |   13.511|
+btn            |Led<6>            |    7.637|
+btn            |Led<7>            |    8.049|
+btn            |VHDC_SYSACTIVE    |    9.996|
+---------------+------------------+---------+
 
-Analysis completed Fri Jun 19 18:01:32 2015 
+
+Analysis completed Mon Jun 22 13:33:42 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 267 MB
+Peak Memory Usage: 266 MB
 
 
 

@@ -549,6 +549,8 @@ module ClockBaseTop(
 	wire [4:0] DMcolAddr_top;
 	wire [6:0] DMrowin_top;
 	wire [31:0] msg_top; 
+	wire [4:0] colOut;
+	wire [6:0] rowOut;	
 	
 	assign msg_top = {msgData[0],msgData[1],msgData[2],msgData[3]};
 
