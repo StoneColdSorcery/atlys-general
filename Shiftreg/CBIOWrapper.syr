@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: CBIOWrapper.prj
 
@@ -115,8 +115,11 @@ Analyzing Verilog file "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-gene
 Parsing module <MessageHandler>.
 Analyzing Verilog file "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" into library work
 Parsing module <ClockBaseTop>.
+WARNING:HDLCompiler:751 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 553: Redeclaration of ansi port colOut is not allowed
+WARNING:HDLCompiler:751 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 554: Redeclaration of ansi port rowOut is not allowed
 Analyzing Verilog file "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\CBIOWrapper.v" into library work
 Parsing module <CBIOWrapper>.
+WARNING:HDLCompiler:1335 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\CBIOWrapper.v" Line 28: Port JB must not be declared to be an array
 
 =========================================================================
 *                            HDL Elaboration                            *
@@ -136,23 +139,21 @@ WARNING:HDLCompiler:1127 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-
 WARNING:HDLCompiler:1127 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 90: Assignment to ct_tx_out ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 91: Assignment to ct_tx_empty ignored, since the identifier is never used
 
-Elaborating module <ClockDivider(divval=32'b0100110001001011010000000)>.
+Elaborating module <ClockDivider(divval=32'b011000011010100000)>.
 
 Elaborating module <ClockDivider(divval=52)>.
 WARNING:HDLCompiler:1127 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 311: Assignment to storeTail ignored, since the identifier is never used
-WARNING:HDLCompiler:413 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 530: Result of 9-bit expression is truncated to fit in 8-bit target.
-WARNING:HDLCompiler:1127 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 472: Assignment to msgHead ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 531: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:1127 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 473: Assignment to msgHead ignored, since the identifier is never used
 
 Elaborating module <MessageHandler>.
 
 Elaborating module <DotController>.
 WARNING:HDLCompiler:413 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\DotDriver.v" Line 128: Result of 6-bit expression is truncated to fit in 5-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 605: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 608: Result of 5-bit expression is truncated to fit in 4-bit target.
 WARNING:HDLCompiler:634 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 37: Net <SRCK> does not have a driver.
 WARNING:HDLCompiler:634 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 86: Net <ct_txclk> does not have a driver.
 WARNING:HDLCompiler:634 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 87: Net <ct_ld_tx_data> does not have a driver.
-WARNING:HDLCompiler:189 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\CBIOWrapper.v" Line 55: Size mismatch in connection of port <colOut>. Formal port size is 5-bit while actual signal size is 7-bit.
-WARNING:HDLCompiler:189 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\CBIOWrapper.v" Line 56: Size mismatch in connection of port <rowOut>. Formal port size is 7-bit while actual signal size is 5-bit.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -160,6 +161,7 @@ WARNING:HDLCompiler:189 - "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-g
 
 Synthesizing Unit <CBIOWrapper>.
     Related source file is "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\CBIOWrapper.v".
+WARNING:Xst:647 - Input <JB<7:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <CBIOWrapper> synthesized.
@@ -196,7 +198,7 @@ WARNING:Xst:653 - Signal <ct_ld_tx_data> is used but never assigned. This source
     Found 8-bit register for signal <nDataBytes>.
     Found 8-bit register for signal <nBytesRcvd>.
     Found 8-bit register for signal <ledOutBuf>.
-    Found 80-bit register for signal <n0128[79:0]>.
+    Found 80-bit register for signal <n0124[79:0]>.
     Found 6-bit register for signal <rxDecState>.
     Found 4-bit register for signal <ledMsgInd>.
     Found 2-bit register for signal <rxUnldState>.
@@ -226,20 +228,18 @@ WARNING:Xst:653 - Signal <ct_ld_tx_data> is used but never assigned. This source
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 9-bit subtractor for signal <GND_2_o_GND_2_o_sub_14_OUT> created at line 393.
-    Found 9-bit subtractor for signal <GND_2_o_GND_2_o_sub_77_OUT> created at line 602.
-    Found 8-bit adder for signal <nBytesRcvd[7]_GND_2_o_add_38_OUT> created at line 530.
-    Found 4-bit adder for signal <ledMsgInd[3]_GND_2_o_add_78_OUT> created at line 605.
-    Found 8-bit 10-to-1 multiplexer for signal <ledMsgInd[3]_X_2_o_wide_mux_80_OUT> created at line 608.
-WARNING:Xst:737 - Found 1-bit latch for signal <newMsg>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 32-bit comparator greater for signal <GND_2_o_GND_2_o_LessThan_15_o> created at line 393
-    Found 8-bit comparator greater for signal <nBytesRcvd[7]_GND_2_o_LessThan_16_o> created at line 393
-    Found 8-bit comparator lessequal for signal <n0065> created at line 531
-    Found 32-bit comparator lessequal for signal <n0109> created at line 602
+    Found 9-bit subtractor for signal <GND_2_o_GND_2_o_sub_14_OUT> created at line 394.
+    Found 9-bit subtractor for signal <GND_2_o_GND_2_o_sub_77_OUT> created at line 605.
+    Found 8-bit adder for signal <nBytesRcvd[7]_GND_2_o_add_38_OUT> created at line 531.
+    Found 4-bit adder for signal <ledMsgInd[3]_GND_2_o_add_78_OUT> created at line 608.
+    Found 8-bit 10-to-1 multiplexer for signal <ledMsgInd[3]_X_2_o_wide_mux_80_OUT> created at line 611.
+    Found 32-bit comparator greater for signal <GND_2_o_GND_2_o_LessThan_15_o> created at line 394
+    Found 8-bit comparator greater for signal <nBytesRcvd[7]_GND_2_o_LessThan_16_o> created at line 394
+    Found 8-bit comparator lessequal for signal <n0063> created at line 532
+    Found 32-bit comparator lessequal for signal <n0107> created at line 605
     Summary:
 	inferred   4 Adder/Subtractor(s).
 	inferred 128 D-type flip-flop(s).
-	inferred   1 Latch(s).
 	inferred   4 Comparator(s).
 	inferred  26 Multiplexer(s).
 	inferred   2 Finite State Machine(s).
@@ -271,7 +271,7 @@ Unit <uart> synthesized.
 
 Synthesizing Unit <ClockDivider_1>.
     Related source file is "C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockDivider.v".
-        divval = 32'b00000000100110001001011010000000
+        divval = 32'b00000000000000011000011010100000
     Found 1-bit register for signal <clk_out>.
     Found 32-bit register for signal <cntr>.
     Found 32-bit adder for signal <cntr[31]_GND_5_o_add_2_OUT> created at line 45.
@@ -316,10 +316,10 @@ Synthesizing Unit <DotController>.
     Found 5-bit register for signal <colOut>.
     Found 5-bit register for signal <colState>.
     Found 35-bit register for signal <n0057[34:0]>.
-    Found 5-bit adder for signal <colState[4]_GND_9_o_add_3_OUT> created at line 128.
-    Found 8x5-bit Read Only RAM for signal <colState[2]_X_8_o_wide_mux_1_OUT>
-    Found 7-bit 5-to-1 multiplexer for signal <colState[2]_X_8_o_wide_mux_0_OUT> created at line 122.
-    Found 5-bit comparator greater for signal <colState[4]_GND_9_o_LessThan_3_o> created at line 127
+    Found 5-bit adder for signal <colState[4]_GND_8_o_add_3_OUT> created at line 128.
+    Found 8x5-bit Read Only RAM for signal <colState[2]_X_7_o_wide_mux_1_OUT>
+    Found 7-bit 5-to-1 multiplexer for signal <colState[2]_X_7_o_wide_mux_0_OUT> created at line 122.
+    Found 5-bit comparator greater for signal <colState[4]_GND_8_o_LessThan_3_o> created at line 127
     Found 5-bit comparator lessequal for signal <n0036> created at line 159
     Summary:
 	inferred   1 RAM(s).
@@ -351,8 +351,6 @@ Macro Statistics
  7-bit register                                        : 2
  8-bit register                                        : 7
  80-bit register                                       : 1
-# Latches                                              : 1
- 1-bit latch                                           : 1
 # Comparators                                          : 9
  32-bit comparator greater                             : 1
  32-bit comparator lessequal                           : 2
@@ -391,8 +389,6 @@ WARNING:Xst:1710 - FF/Latch <ledOutBuf_4> (without init value) has a constant va
 WARNING:Xst:1710 - FF/Latch <ledOutBuf_5> (without init value) has a constant value of 0 in block <clockbasetop>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ledOutBuf_6> (without init value) has a constant value of 0 in block <clockbasetop>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ledOutBuf_7> (without init value) has a constant value of 0 in block <clockbasetop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <rowOut_5> of sequential type is unconnected in block <dotcontroller>.
-WARNING:Xst:2677 - Node <rowOut_6> of sequential type is unconnected in block <dotcontroller>.
 
 Synthesizing (advanced) Unit <ClockBaseTop>.
 The following registers are absorbed into counter <ledMsgInd>: 1 register on signal <ledMsgInd>.
@@ -409,7 +405,7 @@ Unit <ClockDivider_2> synthesized (advanced).
 
 Synthesizing (advanced) Unit <DotController>.
 The following registers are absorbed into counter <colState>: 1 register on signal <colState>.
-INFO:Xst:3217 - HDL ADVISOR - Register <colOut> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_colState[2]_X_8_o_wide_mux_1_OUT> for implementation on block RAM resources if you made this reset synchronous instead.
+INFO:Xst:3217 - HDL ADVISOR - Register <colOut> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_colState[2]_X_7_o_wide_mux_1_OUT> for implementation on block RAM resources if you made this reset synchronous instead.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -567,26 +563,13 @@ WARNING:Xst:2677 - Node <clockbasetop/msgData_0_26> of sequential type is unconn
 WARNING:Xst:2677 - Node <clockbasetop/msgData_0_25> of sequential type is unconnected in block <CBIOWrapper>.
 WARNING:Xst:2677 - Node <clockbasetop/msgData_0_24> of sequential type is unconnected in block <CBIOWrapper>.
 WARNING:Xst:2677 - Node <clockbasetop/msgData_0_23> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/msgData_0_22> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/msgData_0_21> of sequential type is unconnected in block <CBIOWrapper>.
 WARNING:Xst:2677 - Node <clockbasetop/msgData_0_15> of sequential type is unconnected in block <CBIOWrapper>.
 WARNING:Xst:2677 - Node <clockbasetop/msgData_0_14> of sequential type is unconnected in block <CBIOWrapper>.
 WARNING:Xst:2677 - Node <clockbasetop/msgData_0_13> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/instance_name/DMrowin_6> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/instance_name/DMrowin_5> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/dotcontroller/rowOut_6> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/dotcontroller/rowOut_5> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/dotcontroller/mtxData_4_34> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/dotcontroller/mtxData_4_33> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/dotcontroller/mtxData_4_27> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/dotcontroller/mtxData_4_26> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/dotcontroller/mtxData_4_20> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/dotcontroller/mtxData_4_19> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/dotcontroller/mtxData_4_13> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/dotcontroller/mtxData_4_12> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/dotcontroller/mtxData_4_6> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:2677 - Node <clockbasetop/dotcontroller/mtxData_4_5> of sequential type is unconnected in block <CBIOWrapper>.
-WARNING:Xst:1710 - FF/Latch <clockbasetop/RXclkdiv/cntr_22> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <clockbasetop/RXclkdiv/cntr_25> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/RXclkdiv/cntr_24> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/RXclkdiv/cntr_23> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/RXclkdiv/cntr_22> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/RXclkdiv/cntr_21> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/RXclkdiv/cntr_20> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/RXclkdiv/cntr_19> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
@@ -611,20 +594,26 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/SRclkd
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/SRclkdiv/cntr_26> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/SRclkdiv/cntr_25> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/SRclkdiv/cntr_24> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/SRclkdiv/cntr_23> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/SRclkdiv/cntr_22> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/SRclkdiv/cntr_21> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/SRclkdiv/cntr_20> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/SRclkdiv/cntr_19> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/SRclkdiv/cntr_18> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/SRclkdiv/cntr_17> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/RXclkdiv/cntr_31> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/RXclkdiv/cntr_30> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/RXclkdiv/cntr_29> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/RXclkdiv/cntr_28> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/RXclkdiv/cntr_27> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/RXclkdiv/cntr_26> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/RXclkdiv/cntr_25> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/RXclkdiv/cntr_24> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clockbasetop/RXclkdiv/cntr_23> (without init value) has a constant value of 0 in block <CBIOWrapper>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block CBIOWrapper, actual ratio is 1.
+FlipFlop clockbasetop/rxDecBuf_7 has been replicated 1 time(s)
 FlipFlop clockbasetop/rxDecState_FSM_FFd3 has been replicated 1 time(s)
+FlipFlop clockbasetop/rxStateEscReg has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -632,8 +621,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 169
- Flip-Flops                                            : 169
+# Registers                                            : 180
+ Flip-Flops                                            : 180
 
 =========================================================================
 
@@ -656,29 +645,28 @@ Top Level Output File Name         : CBIOWrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 332
+# BELS                             : 326
 #      GND                         : 1
 #      INV                         : 3
-#      LUT1                        : 28
-#      LUT2                        : 15
-#      LUT3                        : 49
-#      LUT4                        : 20
-#      LUT5                        : 42
-#      LUT6                        : 100
-#      MUXCY                       : 35
+#      LUT1                        : 21
+#      LUT2                        : 21
+#      LUT3                        : 59
+#      LUT4                        : 38
+#      LUT5                        : 18
+#      LUT6                        : 105
+#      MUXCY                       : 28
 #      VCC                         : 1
-#      XORCY                       : 38
-# FlipFlops/Latches                : 170
-#      FDC                         : 53
-#      FDCE                        : 113
+#      XORCY                       : 31
+# FlipFlops/Latches                : 180
+#      FDC                         : 47
+#      FDCE                        : 130
 #      FDP                         : 3
-#      LD_1                        : 1
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 24
+# IO Buffers                       : 22
 #      IBUF                        : 2
-#      OBUF                        : 22
+#      OBUF                        : 20
 
 Device utilization summary:
 ---------------------------
@@ -687,20 +675,20 @@ Selected Device : 6slx45csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             170  out of  54576     0%  
- Number of Slice LUTs:                  257  out of  27288     0%  
-    Number used as Logic:               257  out of  27288     0%  
+ Number of Slice Registers:             180  out of  54576     0%  
+ Number of Slice LUTs:                  265  out of  27288     0%  
+    Number used as Logic:               265  out of  27288     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    295
-   Number with an unused Flip Flop:     125  out of    295    42%  
-   Number with an unused LUT:            38  out of    295    12%  
-   Number of fully used LUT-FF pairs:   132  out of    295    44%  
-   Number of unique control sets:        15
+ Number of LUT Flip Flop pairs used:    304
+   Number with an unused Flip Flop:     124  out of    304    40%  
+   Number with an unused LUT:            39  out of    304    12%  
+   Number of fully used LUT-FF pairs:   141  out of    304    46%  
+   Number of unique control sets:        14
 
 IO Utilization: 
- Number of IOs:                          26
- Number of bonded IOBs:                  25  out of    218    11%  
+ Number of IOs:                          31
+ Number of bonded IOBs:                  23  out of    218    10%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
@@ -723,17 +711,13 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
--------------------------------------------------+--------------------------------------------+-------+
-Clock Signal                                     | Clock buffer(FF name)                      | Load  |
--------------------------------------------------+--------------------------------------------+-------+
-clockbasetop/RXclkdiv/clk_out                    | BUFG                                       | 125   |
-CLK                                              | BUFGP                                      | 32    |
-clockbasetop/rxEscFlag(clockbasetop/rxEscFlag1:O)| NONE(*)(clockbasetop/newMsg)               | 1     |
-clockbasetop/SRclkdiv/clk_out                    | NONE(clockbasetop/dotcontroller/colState_1)| 12    |
--------------------------------------------------+--------------------------------------------+-------+
-(*) This 1 clock signal(s) are generated by combinatorial logic,
-and XST is not able to identify which are the primary clock signals.
-Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+-----------------------------------+--------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                      | Load  |
+-----------------------------------+--------------------------------------------+-------+
+clockbasetop/RXclkdiv/clk_out      | BUFG                                       | 141   |
+CLK                                | BUFGP                                      | 25    |
+clockbasetop/SRclkdiv/clk_out      | NONE(clockbasetop/dotcontroller/colState_1)| 14    |
+-----------------------------------+--------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -744,10 +728,10 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 5.089ns (Maximum Frequency: 196.512MHz)
-   Minimum input arrival time before clock: 5.110ns
-   Maximum output required time after clock: 4.534ns
-   Maximum combinational path delay: 7.563ns
+   Minimum period: 5.007ns (Maximum Frequency: 199.720MHz)
+   Minimum input arrival time before clock: 5.314ns
+   Maximum output required time after clock: 5.554ns
+   Maximum combinational path delay: 7.767ns
 
 Timing Details:
 ---------------
@@ -755,86 +739,79 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clockbasetop/RXclkdiv/clk_out'
-  Clock period: 5.089ns (frequency: 196.512MHz)
-  Total number of paths / destination ports: 2677 / 225
+  Clock period: 5.007ns (frequency: 199.720MHz)
+  Total number of paths / destination ports: 2904 / 256
 -------------------------------------------------------------------------
-Delay:               5.089ns (Levels of Logic = 10)
-  Source:            clockbasetop/rxDecBuf_0 (FF)
-  Destination:       clockbasetop/nBytesRcvd_7 (FF)
+Delay:               5.007ns (Levels of Logic = 3)
+  Source:            clockbasetop/rxDecBuf_5 (FF)
+  Destination:       clockbasetop/msgData_0_12 (FF)
   Source Clock:      clockbasetop/RXclkdiv/clk_out rising
   Destination Clock: clockbasetop/RXclkdiv/clk_out rising
 
-  Data Path: clockbasetop/rxDecBuf_0 to clockbasetop/nBytesRcvd_7
+  Data Path: clockbasetop/rxDecBuf_5 to clockbasetop/msgData_0_12
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             7   0.525   1.018  clockbasetop/rxDecBuf_0 (clockbasetop/rxDecBuf_0)
-     LUT2:I0->O           18   0.250   1.343  clockbasetop/rxDecState_FSM_FFd3-In11_SW0 (N6)
-     LUT6:I4->O           19   0.250   1.260  clockbasetop/Mmux_msgData[9][7]_msgData[9][7]_mux_52_OUT1121 (clockbasetop/Mmux_msgData[9][7]_msgData[9][7]_mux_52_OUT112)
-     MUXCY:CI->O           1   0.023   0.000  clockbasetop/Mcount_nBytesRcvd_cy<0> (clockbasetop/Mcount_nBytesRcvd_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  clockbasetop/Mcount_nBytesRcvd_cy<1> (clockbasetop/Mcount_nBytesRcvd_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  clockbasetop/Mcount_nBytesRcvd_cy<2> (clockbasetop/Mcount_nBytesRcvd_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  clockbasetop/Mcount_nBytesRcvd_cy<3> (clockbasetop/Mcount_nBytesRcvd_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  clockbasetop/Mcount_nBytesRcvd_cy<4> (clockbasetop/Mcount_nBytesRcvd_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  clockbasetop/Mcount_nBytesRcvd_cy<5> (clockbasetop/Mcount_nBytesRcvd_cy<5>)
-     MUXCY:CI->O           0   0.023   0.000  clockbasetop/Mcount_nBytesRcvd_cy<6> (clockbasetop/Mcount_nBytesRcvd_cy<6>)
-     XORCY:CI->O           1   0.206   0.000  clockbasetop/Mcount_nBytesRcvd_xor<7> (clockbasetop/Mcount_nBytesRcvd7)
-     FDCE:D                    0.074          clockbasetop/nBytesRcvd_7
+     FDCE:C->Q            14   0.525   1.557  clockbasetop/rxDecBuf_5 (clockbasetop/rxDecBuf_5)
+     LUT5:I0->O            5   0.254   0.841  clockbasetop/_n0242_inv11_SW1 (N36)
+     LUT6:I5->O           11   0.254   1.267  clockbasetop/Mmux_msgData[9][7]_msgData[9][7]_mux_52_OUT1121 (clockbasetop/Mmux_msgData[9][7]_msgData[9][7]_mux_52_OUT112)
+     LUT6:I3->O            1   0.235   0.000  clockbasetop/Mmux_msgData[9][7]_msgData[9][7]_mux_52_OUT801 (clockbasetop/msgData[9][7]_msgData[9][7]_mux_52_OUT<9>)
+     FDCE:D                    0.074          clockbasetop/msgData_0_9
     ----------------------------------------
-    Total                      5.089ns (1.468ns logic, 3.621ns route)
-                                       (28.8% logic, 71.2% route)
+    Total                      5.007ns (1.342ns logic, 3.665ns route)
+                                       (26.8% logic, 73.2% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
-  Clock period: 3.967ns (frequency: 252.080MHz)
-  Total number of paths / destination ports: 965 / 32
+  Clock period: 3.732ns (frequency: 267.953MHz)
+  Total number of paths / destination ports: 524 / 25
 -------------------------------------------------------------------------
-Delay:               3.967ns (Levels of Logic = 2)
-  Source:            clockbasetop/SRclkdiv/cntr_12 (FF)
-  Destination:       clockbasetop/SRclkdiv/cntr_23 (FF)
+Delay:               3.732ns (Levels of Logic = 2)
+  Source:            clockbasetop/SRclkdiv/cntr_7 (FF)
+  Destination:       clockbasetop/SRclkdiv/cntr_16 (FF)
   Source Clock:      CLK rising
   Destination Clock: CLK rising
 
-  Data Path: clockbasetop/SRclkdiv/cntr_12 to clockbasetop/SRclkdiv/cntr_23
+  Data Path: clockbasetop/SRclkdiv/cntr_7 to clockbasetop/SRclkdiv/cntr_16
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.525   1.181  clockbasetop/SRclkdiv/cntr_12 (clockbasetop/SRclkdiv/cntr_12)
-     LUT6:I0->O           25   0.254   1.679  clockbasetop/SRclkdiv/cntr[31]_GND_5_o_equal_2_o<31>1 (clockbasetop/SRclkdiv/cntr[31]_GND_5_o_equal_2_o<31>)
-     LUT5:I1->O            1   0.254   0.000  clockbasetop/SRclkdiv/Mcount_cntr_eqn_231 (clockbasetop/SRclkdiv/Mcount_cntr_eqn_23)
-     FDC:D                     0.074          clockbasetop/SRclkdiv/cntr_23
+     FDC:C->Q              2   0.525   1.181  clockbasetop/SRclkdiv/cntr_7 (clockbasetop/SRclkdiv/cntr_7)
+     LUT6:I0->O           18   0.254   1.463  clockbasetop/SRclkdiv/cntr[31]_GND_5_o_equal_2_o<31>1 (clockbasetop/SRclkdiv/cntr[31]_GND_5_o_equal_2_o<31>)
+     LUT4:I1->O            1   0.235   0.000  clockbasetop/SRclkdiv/Mcount_cntr_eqn_01 (clockbasetop/SRclkdiv/Mcount_cntr_eqn_0)
+     FDC:D                     0.074          clockbasetop/SRclkdiv/cntr_0
     ----------------------------------------
-    Total                      3.967ns (1.107ns logic, 2.860ns route)
-                                       (27.9% logic, 72.1% route)
+    Total                      3.732ns (1.088ns logic, 2.644ns route)
+                                       (29.2% logic, 70.8% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clockbasetop/SRclkdiv/clk_out'
-  Clock period: 3.387ns (frequency: 295.247MHz)
-  Total number of paths / destination ports: 33 / 12
+  Clock period: 3.446ns (frequency: 290.192MHz)
+  Total number of paths / destination ports: 39 / 14
 -------------------------------------------------------------------------
-Delay:               3.387ns (Levels of Logic = 2)
+Delay:               3.446ns (Levels of Logic = 2)
   Source:            clockbasetop/dotcontroller/colState_0 (FF)
-  Destination:       clockbasetop/dotcontroller/rowOut_4 (FF)
+  Destination:       clockbasetop/dotcontroller/rowOut_6 (FF)
   Source Clock:      clockbasetop/SRclkdiv/clk_out rising
   Destination Clock: clockbasetop/SRclkdiv/clk_out rising
 
-  Data Path: clockbasetop/dotcontroller/colState_0 to clockbasetop/dotcontroller/rowOut_4
+  Data Path: clockbasetop/dotcontroller/colState_0 to clockbasetop/dotcontroller/rowOut_6
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            11   0.525   1.494  clockbasetop/dotcontroller/colState_0 (clockbasetop/dotcontroller/colState_0)
-     LUT6:I0->O            1   0.254   0.790  clockbasetop/dotcontroller/mux3711 (clockbasetop/dotcontroller/mux371)
-     LUT3:I1->O            1   0.250   0.000  clockbasetop/dotcontroller/mux3712 (clockbasetop/dotcontroller/colState[2]_X_8_o_wide_mux_0_OUT<2>)
-     FDCE:D                    0.074          clockbasetop/dotcontroller/rowOut_2
+     FDCE:C->Q            13   0.525   1.553  clockbasetop/dotcontroller/colState_0 (clockbasetop/dotcontroller/colState_0)
+     LUT6:I0->O            1   0.254   0.790  clockbasetop/dotcontroller/mux41111 (clockbasetop/dotcontroller/mux4111)
+     LUT3:I1->O            1   0.250   0.000  clockbasetop/dotcontroller/mux41112 (clockbasetop/dotcontroller/colState[2]_X_7_o_wide_mux_0_OUT<6>)
+     FDCE:D                    0.074          clockbasetop/dotcontroller/rowOut_6
     ----------------------------------------
-    Total                      3.387ns (1.103ns logic, 2.284ns route)
-                                       (32.6% logic, 67.4% route)
+    Total                      3.446ns (1.103ns logic, 2.343ns route)
+                                       (32.0% logic, 68.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clockbasetop/RXclkdiv/clk_out'
-  Total number of paths / destination ports: 126 / 126
+  Total number of paths / destination ports: 142 / 142
 -------------------------------------------------------------------------
-Offset:              5.110ns (Levels of Logic = 2)
+Offset:              5.314ns (Levels of Logic = 2)
   Source:            btn (PAD)
   Destination:       clockbasetop/rxUnldState_FSM_FFd1 (FF)
   Destination Clock: clockbasetop/RXclkdiv/clk_out rising
@@ -843,38 +820,38 @@ Offset:              5.110ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   0.681  btn_IBUF (btn_IBUF)
-     INV:I->O            174   0.255   2.387  VHDC_SYSACTIVE1_INV_0 (Led_0_OBUF)
+     IBUF:I->O             6   1.328   0.875  btn_IBUF (btn_IBUF)
+     INV:I->O            183   0.255   2.397  Mmux_Led81_INV_0 (Led_5_OBUF)
      FDCE:CLR                  0.459          clockbasetop/msgData_0_0
     ----------------------------------------
-    Total                      5.110ns (2.042ns logic, 3.068ns route)
-                                       (40.0% logic, 60.0% route)
+    Total                      5.314ns (2.042ns logic, 3.272ns route)
+                                       (38.4% logic, 61.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
-  Total number of paths / destination ports: 32 / 32
+  Total number of paths / destination ports: 25 / 25
 -------------------------------------------------------------------------
-Offset:              5.110ns (Levels of Logic = 2)
+Offset:              5.314ns (Levels of Logic = 2)
   Source:            btn (PAD)
-  Destination:       clockbasetop/SRclkdiv/cntr_23 (FF)
+  Destination:       clockbasetop/SRclkdiv/cntr_16 (FF)
   Destination Clock: CLK rising
 
-  Data Path: btn to clockbasetop/SRclkdiv/cntr_23
+  Data Path: btn to clockbasetop/SRclkdiv/cntr_16
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   0.681  btn_IBUF (btn_IBUF)
-     INV:I->O            174   0.255   2.387  VHDC_SYSACTIVE1_INV_0 (Led_0_OBUF)
+     IBUF:I->O             6   1.328   0.875  btn_IBUF (btn_IBUF)
+     INV:I->O            183   0.255   2.397  Mmux_Led81_INV_0 (Led_5_OBUF)
      FDC:CLR                   0.459          clockbasetop/RXclkdiv/cntr_0
     ----------------------------------------
-    Total                      5.110ns (2.042ns logic, 3.068ns route)
-                                       (40.0% logic, 60.0% route)
+    Total                      5.314ns (2.042ns logic, 3.272ns route)
+                                       (38.4% logic, 61.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clockbasetop/SRclkdiv/clk_out'
-  Total number of paths / destination ports: 12 / 12
+  Total number of paths / destination ports: 14 / 14
 -------------------------------------------------------------------------
-Offset:              5.110ns (Levels of Logic = 2)
+Offset:              5.314ns (Levels of Logic = 2)
   Source:            btn (PAD)
   Destination:       clockbasetop/dotcontroller/colState_1 (FF)
   Destination Clock: clockbasetop/SRclkdiv/clk_out rising
@@ -883,37 +860,38 @@ Offset:              5.110ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   0.681  btn_IBUF (btn_IBUF)
-     INV:I->O            174   0.255   2.387  VHDC_SYSACTIVE1_INV_0 (Led_0_OBUF)
+     IBUF:I->O             6   1.328   0.875  btn_IBUF (btn_IBUF)
+     INV:I->O            183   0.255   2.397  Mmux_Led81_INV_0 (Led_5_OBUF)
      FDCE:CLR                  0.459          clockbasetop/dotcontroller/colOut_0
     ----------------------------------------
-    Total                      5.110ns (2.042ns logic, 3.068ns route)
-                                       (40.0% logic, 60.0% route)
+    Total                      5.314ns (2.042ns logic, 3.272ns route)
+                                       (38.4% logic, 61.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clockbasetop/SRclkdiv/clk_out'
-  Total number of paths / destination ports: 10 / 10
+  Total number of paths / destination ports: 17 / 17
 -------------------------------------------------------------------------
-Offset:              4.534ns (Levels of Logic = 1)
+Offset:              5.554ns (Levels of Logic = 2)
   Source:            clockbasetop/dotcontroller/colOut_1 (FF)
-  Destination:       VHDCIIO1<6> (PAD)
+  Destination:       Led<1> (PAD)
   Source Clock:      clockbasetop/SRclkdiv/clk_out rising
 
-  Data Path: clockbasetop/dotcontroller/colOut_1 to VHDCIIO1<6>
+  Data Path: clockbasetop/dotcontroller/colOut_1 to Led<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            13   0.525   1.097  clockbasetop/dotcontroller/colOut_1 (clockbasetop/dotcontroller/colOut_1)
-     OBUF:I->O                 2.912          VHDCIIO1_6_OBUF (VHDCIIO1<6>)
+     FDCE:C->Q            16   0.525   1.182  clockbasetop/dotcontroller/colOut_1 (clockbasetop/dotcontroller/colOut_1)
+     LUT2:I1->O            1   0.254   0.681  Mmux_Led21 (Led_1_OBUF)
+     OBUF:I->O                 2.912          Led_1_OBUF (Led<1>)
     ----------------------------------------
-    Total                      4.534ns (3.437ns logic, 1.097ns route)
-                                       (75.8% logic, 24.2% route)
+    Total                      5.554ns (3.691ns logic, 1.863ns route)
+                                       (66.5% logic, 33.5% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 6 / 6
+  Total number of paths / destination ports: 8 / 8
 -------------------------------------------------------------------------
-Delay:               7.563ns (Levels of Logic = 3)
+Delay:               7.767ns (Levels of Logic = 3)
   Source:            btn (PAD)
   Destination:       Led<7> (PAD)
 
@@ -921,12 +899,12 @@ Delay:               7.563ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   0.681  btn_IBUF (btn_IBUF)
-     INV:I->O            174   0.255   2.387  VHDC_SYSACTIVE1_INV_0 (Led_0_OBUF)
-     OBUF:I->O                 2.912          Led_0_OBUF (Led<0>)
+     IBUF:I->O             6   1.328   0.875  btn_IBUF (btn_IBUF)
+     INV:I->O            183   0.255   2.397  Mmux_Led81_INV_0 (Led_5_OBUF)
+     OBUF:I->O                 2.912          Led_5_OBUF (Led<5>)
     ----------------------------------------
-    Total                      7.563ns (4.495ns logic, 3.068ns route)
-                                       (59.4% logic, 40.6% route)
+    Total                      7.767ns (4.495ns logic, 3.272ns route)
+                                       (57.9% logic, 42.1% route)
 
 =========================================================================
 
@@ -938,7 +916,7 @@ Clock to Setup on destination clock CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    3.967|         |         |         |
+CLK            |    3.732|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clockbasetop/RXclkdiv/clk_out
@@ -946,8 +924,7 @@ Clock to Setup on destination clock clockbasetop/RXclkdiv/clk_out
                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------+---------+---------+---------+---------+
-clockbasetop/RXclkdiv/clk_out|    5.089|         |         |         |
-clockbasetop/rxEscFlag       |    2.046|         |         |         |
+clockbasetop/RXclkdiv/clk_out|    5.007|         |         |         |
 -----------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clockbasetop/SRclkdiv/clk_out
@@ -956,28 +933,20 @@ Clock to Setup on destination clock clockbasetop/SRclkdiv/clk_out
 Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------+---------+---------+---------+---------+
 clockbasetop/RXclkdiv/clk_out|    2.895|         |         |         |
-clockbasetop/SRclkdiv/clk_out|    3.387|         |         |         |
------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock clockbasetop/rxEscFlag
------------------------------+---------+---------+---------+---------+
-                             | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
------------------------------+---------+---------+---------+---------+
-clockbasetop/RXclkdiv/clk_out|    4.727|         |         |         |
+clockbasetop/SRclkdiv/clk_out|    3.446|         |         |         |
 -----------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.59 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.64 secs
  
 --> 
 
-Total memory usage is 262700 kilobytes
+Total memory usage is 262828 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  160 (   0 filtered)
+Number of warnings :  150 (   0 filtered)
 Number of infos    :    5 (   0 filtered)
 

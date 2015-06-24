@@ -3,10 +3,11 @@
 
 // Instantiate the module
 CBIOWrapper instance_name (
+    .CLK(CLK), 
+    .btn(btn), 
+    .sw(sw), 
     .VHDCIIO1(VHDCIIO1), 
-    .VHDCIIO2(VHDCIIO2), 
-    .Led(Led), 
-    .reset(reset)
+    .Led(Led)
     );
 
 

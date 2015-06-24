@@ -5,6 +5,15 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="751" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 553: Redeclaration of ansi port <arg fmt="%s" index="1">colOut</arg> is not allowed
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="751" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 554: Redeclaration of ansi port <arg fmt="%s" index="1">rowOut</arg> is not allowed
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1335" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\CBIOWrapper.v" Line 28: Port <arg fmt="%s" index="1">JB</arg> must not be declared to be an array
+</msg>
+
 <msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\UART.v" Line 106: Result of <arg fmt="%d" index="1">5</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
 </msg>
 
@@ -32,16 +41,16 @@
 <msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 311: Assignment to <arg fmt="%s" index="1">storeTail</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 530: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 531: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 472: Assignment to <arg fmt="%s" index="1">msgHead</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 473: Assignment to <arg fmt="%s" index="1">msgHead</arg> ignored, since the identifier is never used
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\DotDriver.v" Line 128: Result of <arg fmt="%d" index="1">6</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">5</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 605: Result of <arg fmt="%d" index="1">5</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 608: Result of <arg fmt="%d" index="1">5</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 37: Net &lt;<arg fmt="%s" index="1">SRCK</arg>&gt; does not have a driver.
@@ -53,10 +62,7 @@
 <msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\ClockBaseTop.v" Line 87: Net &lt;<arg fmt="%s" index="1">ct_ld_tx_data</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\CBIOWrapper.v" Line 55: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">colOut</arg>&gt;. Formal port size is <arg fmt="%d" index="2">5</arg>-bit while actual signal size is <arg fmt="%d" index="1">7</arg>-bit.
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="189" delta="old" >"C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\Source\CBIOWrapper.v" Line 56: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">rowOut</arg>&gt;. Formal port size is <arg fmt="%d" index="2">7</arg>-bit while actual signal size is <arg fmt="%d" index="1">5</arg>-bit.
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">JB&lt;7:1&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">sw</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -75,9 +81,6 @@
 </msg>
 
 <msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">ct_ld_tx_data</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">newMsg</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">ledMsgInd_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">clockbasetop</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -116,13 +119,7 @@
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">ledOutBuf_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">clockbasetop</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">rowOut_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">dotcontroller</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">rowOut_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">dotcontroller</arg>&gt;.
-</msg>
-
-<msg type="info" file="Xst" num="3217" delta="old" >HDL ADVISOR - Register &lt;<arg fmt="%s" index="1">colOut</arg>&gt; currently described with an asynchronous reset, could be combined with distributed RAM &lt;<arg fmt="%s" index="2">Mram_colState[2]_X_8_o_wide_mux_1_OUT</arg>&gt; for implementation on block RAM resources if you made this reset synchronous instead.
+<msg type="info" file="Xst" num="3217" delta="old" >HDL ADVISOR - Register &lt;<arg fmt="%s" index="1">colOut</arg>&gt; currently described with an asynchronous reset, could be combined with distributed RAM &lt;<arg fmt="%s" index="2">Mram_colState[2]_X_7_o_wide_mux_1_OUT</arg>&gt; for implementation on block RAM resources if you made this reset synchronous instead.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">ledOutBuf_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ClockBaseTop</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -338,12 +335,6 @@
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/msgData_0_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/msgData_0_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/msgData_0_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
-</msg>
-
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/msgData_0_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
 </msg>
 
@@ -353,49 +344,16 @@
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/msgData_0_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/instance_name/DMrowin_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/RXclkdiv/cntr_25</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/instance_name/DMrowin_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/RXclkdiv/cntr_24</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/dotcontroller/rowOut_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/RXclkdiv/cntr_23</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/dotcontroller/rowOut_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/dotcontroller/mtxData_4_34</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/dotcontroller/mtxData_4_33</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/dotcontroller/mtxData_4_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/dotcontroller/mtxData_4_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/dotcontroller/mtxData_4_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/dotcontroller/mtxData_4_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/dotcontroller/mtxData_4_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/dotcontroller/mtxData_4_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/dotcontroller/mtxData_4_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clockbasetop/dotcontroller/mtxData_4_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">CBIOWrapper</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/RXclkdiv/cntr_22</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/RXclkdiv/cntr_22</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/RXclkdiv/cntr_21</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -470,6 +428,27 @@
 <msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/SRclkdiv/cntr_24</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/SRclkdiv/cntr_23</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/SRclkdiv/cntr_22</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/SRclkdiv/cntr_21</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/SRclkdiv/cntr_20</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/SRclkdiv/cntr_19</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/SRclkdiv/cntr_18</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/SRclkdiv/cntr_17</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
 <msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/RXclkdiv/cntr_31</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
@@ -486,15 +465,6 @@
 </msg>
 
 <msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/RXclkdiv/cntr_26</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/RXclkdiv/cntr_25</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/RXclkdiv/cntr_24</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">clockbasetop/RXclkdiv/cntr_23</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CBIOWrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.

@@ -1,4 +1,4 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/test2sr_isim_beh.exe" -prj "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/test2sr_beh.prj" "work.test2sr" "work.glbl" 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/wrappertest_isim_beh.exe" -prj "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/wrappertest_beh.prj" "work.wrappertest" "work.glbl" 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 8
 Turning on mult-threading, number of parallel sub-compilation jobs: 16 
@@ -7,15 +7,13 @@ Analyzing Verilog file "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-gene
 Analyzing Verilog file "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/DotDriver.v" into library work
 Analyzing Verilog file "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/ClockDivider.v" into library work
 Analyzing Verilog file "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/MessageHandler.v" into library work
-WARNING:HDLCompiler:751 - "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/MessageHandler.v" Line 44: Redeclaration of ansi port DMwrite is not allowed
-WARNING:HDLCompiler:751 - "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/MessageHandler.v" Line 45: Redeclaration of ansi port DMenable is not allowed
-WARNING:HDLCompiler:751 - "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/MessageHandler.v" Line 46: Redeclaration of ansi port DMcolAddr is not allowed
-WARNING:HDLCompiler:751 - "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/MessageHandler.v" Line 47: Redeclaration of ansi port DMrowin is not allowed
 Analyzing Verilog file "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/ClockBaseTop.v" into library work
-Analyzing Verilog file "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/test2sr.v" into library work
+WARNING:HDLCompiler:751 - "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/ClockBaseTop.v" Line 552: Redeclaration of ansi port colOut is not allowed
+WARNING:HDLCompiler:751 - "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/ClockBaseTop.v" Line 553: Redeclaration of ansi port rowOut is not allowed
+Analyzing Verilog file "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/CBIOWrapper.v" into library work
+Analyzing Verilog file "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/wrappertest.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-WARNING:HDLCompiler:1016 - "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/test2sr.v" Line 40: Port colOut is not connected to this instance
 Completed static elaboration
 Compiling module uart
 Compiling module ClockDivider(divval=32'b01100100...
@@ -23,11 +21,12 @@ Compiling module ClockDivider(divval=52)
 Compiling module MessageHandler
 Compiling module DotController
 Compiling module ClockBaseTop
-Compiling module test2sr
+Compiling module CBIOWrapper
+Compiling module wrappertest
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 2 sub-compilation(s) to finish...
-Compiled 8 Verilog Units
-Built simulation executable C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/test2sr_isim_beh.exe
-Fuse Memory Usage: 29420 KB
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 9 Verilog Units
+Built simulation executable C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/wrappertest_isim_beh.exe
+Fuse Memory Usage: 29416 KB
 Fuse CPU Usage: 342 ms

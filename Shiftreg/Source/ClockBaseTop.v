@@ -111,7 +111,7 @@ module ClockBaseTop(
 	`ifdef XILINX_ISIM
 		defparam SRclkdiv.divval = 32'd100;
 	`else
-		defparam SRclkdiv.divval = 32'd10_000_000;
+		defparam SRclkdiv.divval = 32'd100_000;
 	`    endif
 	
 	
@@ -322,6 +322,7 @@ module ClockBaseTop(
 			storeTail = 0;
 			storeBcnt = 0;
 			storeHead = 0;
+			newMsg = 0;
 			clearData = 0;
 			msgComplete = 0;
 		end else if ((rxDecBuf == SP_SYNC) && !rxStateEscReg) begin		

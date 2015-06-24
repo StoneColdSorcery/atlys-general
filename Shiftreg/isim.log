@@ -1,10 +1,12 @@
 ISim log file
-Running: C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\test2sr_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -view C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/sr2test.wcfg -wdb C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/test2sr_isim_beh.wdb 
+Running: C:\Users\Crazyfingers\Documents\Atlys-General\atlys-general\Shiftreg\wrappertest_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -view C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/sr2test.wcfg -wdb C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/wrappertest_isim_beh.wdb 
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
+WARNING: File "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/CBIOWrapper.v" Line 31.  For instance uut/clockbasetop/, width 5 of formal port colOut is not equal to width 7 of actual signal VHDC_COL.
+WARNING: File "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/CBIOWrapper.v" Line 32.  For instance uut/clockbasetop/, width 7 of formal port rowOut is not equal to width 5 of actual signal VHDC_ROW.
 Time resolution is 1 ps
 # onerror resume
 # run 10.0ms
@@ -15,6 +17,28 @@ WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
 This is a Lite version of ISim.
+WARNING: File "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/CBIOWrapper.v" Line 31.  For instance uut/clockbasetop/, width 5 of formal port colOut is not equal to width 7 of actual signal VHDC_COL.
+WARNING: File "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/CBIOWrapper.v" Line 32.  For instance uut/clockbasetop/, width 7 of formal port rowOut is not equal to width 5 of actual signal VHDC_ROW.
+# run 10.0ms
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run 5.0ms
+# restart
+# run all
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+Stopped at time : 56885610 ns : File "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/wrappertest.v" Line 250
+# restart
+# run 5.0ms
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+WARNING: File "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/CBIOWrapper.v" Line 31.  For instance uut/clockbasetop/, width 5 of formal port colOut is not equal to width 7 of actual signal VHDC_COL.
+WARNING: File "C:/Users/Crazyfingers/Documents/Atlys-General/atlys-general/Shiftreg/Source/CBIOWrapper.v" Line 32.  For instance uut/clockbasetop/, width 7 of formal port rowOut is not equal to width 5 of actual signal VHDC_ROW.
 # run 10.0ms
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
@@ -34,70 +58,7 @@ This is a Lite version of ISim.
 # run 10.0ms
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 10.0ms
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 10.0ms
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 10.0ms
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 10.0ms
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 10.0ms
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 10.0ms
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 10.0ms
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.20131013 (signature 0x7708f090)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-# run 10.0ms
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
+# run 5.0ms
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.

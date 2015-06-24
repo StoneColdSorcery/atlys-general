@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
 -n 3 -fastpaths -xml CBIOWrapper.twx CBIOWrapper.ncd -o CBIOWrapper.twr
-CBIOWrapper.pcf -ucf iopoins.ucf
+CBIOWrapper.pcf -ucf iowrapperpins.ucf
 
 Design file:              CBIOWrapper.ncd
 Physical constraint file: CBIOWrapper.pcf
@@ -37,7 +37,7 @@ Setup/Hold to clock CLK
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-btn         |    9.605(R)|      SLOW  |   -3.857(R)|      FAST  |CLK_BUFGP         |   0.000|
+btn         |    9.981(R)|      SLOW  |   -2.871(R)|      FAST  |CLK_BUFGP         |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock to Setup on destination clock CLK
@@ -45,30 +45,32 @@ Clock to Setup on destination clock CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    3.771|         |         |         |
+CLK            |    3.432|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
----------------+------------------+---------+
-Source Pad     |Destination Pad   |  Delay  |
----------------+------------------+---------+
-VHDC_UARTRX    |VHDC_UARTRX_BOUNCE|    7.406|
-btn            |Led<0>            |   13.511|
-btn            |Led<1>            |   13.511|
-btn            |Led<6>            |    7.637|
-btn            |Led<7>            |    8.049|
-btn            |VHDC_SYSACTIVE    |    9.996|
----------------+------------------+---------+
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+btn            |Led<0>         |   12.628|
+btn            |Led<1>         |   12.856|
+btn            |Led<2>         |   12.500|
+btn            |Led<3>         |   12.024|
+btn            |Led<4>         |   11.909|
+btn            |Led<5>         |   18.692|
+btn            |Led<6>         |    7.637|
+btn            |Led<7>         |    8.039|
+---------------+---------------+---------+
 
 
-Analysis completed Mon Jun 22 13:33:42 2015 
+Analysis completed Tue Jun 23 15:24:50 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 266 MB
+Peak Memory Usage: 267 MB
 
 
 
